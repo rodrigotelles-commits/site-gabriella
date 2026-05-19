@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gabriella Trevizan | Psicóloga Clínica</title>
+  <meta name="description" content="Gabriella Trevizan, psicóloga clínica CRP 08/46868. Atendimento psicológico presencial e online com acolhimento, escuta e cuidado emocional." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f6eee8;
+      --paper:#fffaf6;
+      --cream:#fbf4ee;
+      --rose:#d7a99f;
+      --brown:#9b6f60;
+      --brown-dark:#5c3d34;
+      --blue:#26384d;
+      --text:#302a27;
+      --muted:#746961;
+      --line:rgba(92,61,52,.16);
+      --shadow:0 26px 80px rgba(70,45,38,.13);
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,sans-serif;
+      color:var(--text);
+      line-height:1.65;
+      background:var(--cream);
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(100% - 34px,var(--max));margin:0 auto}
+
+    .top-strip{
+      background:var(--blue);
+      color:white;
+      text-align:center;
+      padding:8px 16px;
+      font-size:.95rem;
+      letter-spacing:.01em;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:#bdb5ae;
+      border-bottom:1px solid rgba(255,255,255,.22);
+    }
+    .nav{
+      min-height:96px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:28px;
+    }
+    .brand{
+      line-height:1;
+      color:white;
+      min-width:210px;
+    }
+    .brand strong{
+      display:block;
+      font-family:'Cormorant Garamond',serif;
+      font-size:2.05rem;
+      font-weight:700;
+      letter-spacing:.01em;
+    }
+    .brand span{
+      display:block;
+      margin-top:7px;
+      color:#c99743;
+      font-size:.76rem;
+      letter-spacing:.22em;
+      text-transform:uppercase;
+      font-weight:800;
+    }
+    .menu{
+      display:none;
+      align-items:center;
+      gap:32px;
+      color:var(--blue);
+      font-weight:800;
+      font-size:.92rem;
+      text-transform:uppercase;
+    }
+    .menu a:hover{color:var(--brown-dark)}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:1px solid transparent;
+      cursor:pointer;
+      font-weight:800;
+      transition:.22s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-nav{
+      background:var(--blue);
+      color:white;
+      border-radius:5px;
+      padding:18px 28px;
+      font-size:1rem;
+      text-transform:uppercase;
+    }
+    .btn-main{
+      background:#5d8795;
+      color:white;
+      border-radius:6px;
+      padding:17px 28px;
+      box-shadow:0 14px 32px rgba(38,56,77,.18);
+    }
+    .btn-outline{
+      border-color:var(--brown);
+      color:var(--brown-dark);
+      border-radius:999px;
+      padding:14px 24px;
+      background:transparent;
+    }
+
+    .hero{
+      background:linear-gradient(90deg,#f2ebe5 0%,#eee5dd 54%,#d8cdc6 100%);
+      min-height:670px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      gap:34px;
+      align-items:center;
+    }
+    .hero-copy{padding:58px 0;position:relative;z-index:2}
+    .eyebrow{
+      display:block;
+      margin-bottom:20px;
+      color:var(--brown);
+      text-transform:uppercase;
+      font-weight:900;
+      letter-spacing:.18em;
+      font-size:.78rem;
+    }
+    h1,h2,h3{
+      margin:0;
+      font-family:'Cormorant Garamond',serif;
+      line-height:1.04;
+      letter-spacing:-.025em;
+      color:var(--text);
+    }
+    h1{
+      font-size:clamp(2.85rem,6.5vw,5.6rem);
+      max-width:720px;
+      color:#577f8d;
+      font-weight:700;
+    }
+    h2{font-size:clamp(2.1rem,5vw,4.1rem);font-weight:700}
+    h3{font-size:1.55rem;font-weight:700}
+    .lead{
+      margin:24px 0 0;
+      max-width:590px;
+      font-size:1.18rem;
+      color:#151515;
+      font-weight:700;
+    }
+    .lead-light{
+      font-weight:500;
+      color:var(--muted);
+      max-width:570px;
+    }
+    .hero-actions{display:flex;flex-direction:column;gap:14px;margin-top:32px}
+    .hero-photo{
+      min-height:670px;
+      background:url('fba91986-0079-4287-9eeb-2e31927d1cc3.png') center bottom/cover no-repeat;
+      border-radius:0;
+      align-self:stretch;
+      filter:saturate(.98) contrast(.98);
+    }
+
+    section{padding:86px 0;border-top:1px solid rgba(92,61,52,.08)}
+    .split{display:grid;gap:52px;align-items:center}
+    .about-card{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:clamp(28px,5vw,52px);
+      box-shadow:var(--shadow);
+    }
+    .about-text p{
+      color:var(--muted);
+      margin:18px 0 0;
+      font-size:1.03rem;
+    }
+    .about-photo{
+      min-height:560px;
+      border-radius:30px;
+      background:url('fba91986-0079-4287-9eeb-2e31927d1cc3.png') center/cover no-repeat;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,.65);
+    }
+
+    .section-head{
+      text-align:center;
+      max-width:790px;
+      margin:0 auto 48px;
+    }
+    .section-head p{
+      margin:14px auto 0;
+      max-width:640px;
+      color:var(--muted);
+    }
+    .soft{background:linear-gradient(180deg,#fffaf6,#f0e3da)}
+
+    .cards{
+      display:grid;
+      gap:18px;
+    }
+    .card{
+      background:rgba(255,250,246,.86);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:30px 22px;
+      text-align:center;
+      min-height:220px;
+      transition:.22s ease;
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(70,45,38,.1)}
+    .icon{
+      color:var(--brown);
+      font-size:2.15rem;
+      margin-bottom:14px;
+    }
+    .card p{color:var(--muted);font-size:.95rem;margin:12px 0 0}
+
+    .process-grid{
+      display:grid;
+      gap:18px;
+      counter-reset:step;
+      align-items:start;
+    }
+    .step{
+      counter-increment:step;
+      text-align:center;
+      padding:18px;
+      position:relative;
+    }
+    .step:before{
+      content:counter(step);
+      width:64px;
+      height:64px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      margin:0 auto 15px;
+      background:var(--paper);
+      border:1px solid var(--line);
+      color:var(--brown-dark);
+      font-weight:900;
+      font-size:1.2rem;
+    }
+    .step h3{font-size:1.25rem;font-family:Inter,sans-serif;letter-spacing:0}
+    .step p{color:var(--muted);font-size:.92rem;margin:8px 0 0}
+    .format-box{
+      margin-top:42px;
+      background:linear-gradient(135deg,#c58c79,#a87666);
+      color:white;
+      border-radius:18px;
+      padding:34px;
+      display:grid;
+      gap:8px;
+      box-shadow:var(--shadow);
+    }
+    .format-box p{margin:0;color:rgba(255,255,255,.88)}
+
+    .faq{max-width:860px;margin:0 auto;display:grid;gap:14px}
+    details{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:21px 23px;
+    }
+    summary{cursor:pointer;font-weight:900;color:var(--text)}
+    details p{color:var(--muted);margin-bottom:0}
+
+    .cta-bar{
+      background:linear-gradient(135deg,#b17d69,#8f6758);
+      border-radius:18px;
+      color:white;
+      padding:26px 32px;
+      display:grid;
+      gap:22px;
+      align-items:center;
+      box-shadow:var(--shadow);
+    }
+    .cta-bar h2{font-size:2rem;color:white}
+    .cta-bar p{margin:4px 0 0;color:rgba(255,255,255,.85)}
+    .btn-white{background:white;color:var(--brown-dark);border-radius:999px;padding:15px 28px}
+
+    .contact-box{
+      background:var(--paper);
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:clamp(30px,6vw,58px);
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+    .contact-box p{color:var(--muted);max-width:620px;margin:18px auto 28px}
+    .contact-info{display:grid;gap:10px;margin-top:24px;color:var(--muted);font-weight:700}
+
+    footer{
+      background:#2f2926;
+      color:rgba(255,255,255,.75);
+      text-align:center;
+      padding:38px 0;
+      font-size:.92rem;
+    }
+    .float-whats{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:40;
+      width:58px;
+      height:58px;
+      border-radius:50%;
+      background:#16a34a;
+      color:white;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:1.3rem;
+      box-shadow:0 12px 34px rgba(22,163,74,.34);
+    }
+
+    @media(min-width:680px){
+      .hero-actions{flex-direction:row}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .contact-info{grid-template-columns:repeat(3,1fr)}
+      .cta-bar{grid-template-columns:1fr auto}
+    }
+    @media(min-width:980px){
+      .menu{display:flex}
+      .hero-grid{grid-template-columns:.9fr .85fr}
+      .split{grid-template-columns:.82fr 1fr}
+      .cards{grid-template-columns:repeat(3,1fr)}
+      .process-grid{grid-template-columns:repeat(4,1fr)}
+    }
+    @media(max-width:620px){
+      .top-strip{font-size:.84rem}
+      .nav{min-height:76px}
+      .brand strong{font-size:1.55rem}
+      .nav .btn{display:none}
+      .hero{min-height:auto}
+      .hero-copy{padding:48px 0 20px}
+      .hero-photo{min-height:460px;border-radius:26px;margin-bottom:36px}
+      section{padding:62px 0}
+    }
+  </style>
+</head>
+<body>
+  <a class="float-whats" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20agendar%20uma%20consulta." aria-label="WhatsApp">☎</a>
+
+  <div class="top-strip">📍 Atendimento presencial em Curitiba e online para todo o mundo.</div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <strong>Gabriella Trevizan</strong>
+        <span>Psicóloga</span>
+      </a>
+      <nav class="menu" aria-label="Menu principal">
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#faq">Perguntas frequentes</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn btn-nav" href="#contato">Fale comigo</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Psicologia clínica</span>
+          <h1>Acolhimento para entender. Espaço para transformar.</h1>
+          <p class="lead">Você pode compreender suas emoções, fortalecer sua caminhada emocional e construir uma relação mais leve consigo mesma.</p>
+          <div class="hero-actions">
+            <a class="btn btn-main" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20agendar%20uma%20consulta.">Quero atendimento</a>
+            <a class="btn btn-outline" href="#sobre">Saiba mais</a>
+          </div>
+        </div>
+        <div class="hero-photo" role="img" aria-label="Gabriella Trevizan, psicóloga clínica"></div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container split">
+        <div class="about-photo" role="img" aria-label="Foto profissional de Gabriella Trevizan"></div>
+        <div class="about-card about-text">
+          <span class="eyebrow">Sobre mim</span>
+          <h2>Psicologia com presença, escuta e direção.</h2>
+          <p>Sou psicóloga clínica. Meu compromisso é oferecer um espaço seguro e acolhedor para que você possa se reconectar consigo mesma, compreender suas dificuldades e fortalecer sua caminhada emocional.</p>
+          <p>Acredito que o autoconhecimento é a base para mudanças reais, e estou aqui para caminhar ao seu lado nesse processo de descoberta, elaboração e crescimento.</p>
+          <p>Atuo com escuta cuidadosa, comunicação clara e acolhimento, respeitando a história, o tempo e as necessidades de cada pessoa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="especialidades" class="soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Áreas de atuação</span>
+          <h2>Como posso te ajudar</h2>
+          <p>Atendimento psicológico para diferentes fases, dores emocionais e desafios da vida.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">◌</div><h3>Ansiedade</h3><p>Preocupação excessiva, mente acelerada, tensão constante, medo do futuro e dificuldade de relaxar.</p></article>
+          <article class="card"><div class="icon">♡</div><h3>Autocobrança e culpa</h3><p>Para quem sente que nunca faz o suficiente, se culpa com frequência e tem dificuldade de se acolher.</p></article>
+          <article class="card"><div class="icon">✦</div><h3>Maternidade</h3><p>Acolhimento para mães que vivem cansaço, sobrecarga, culpa e desafios da maternidade real.</p></article>
+          <article class="card"><div class="icon">☼</div><h3>Autoestima</h3><p>Construção de uma relação mais saudável consigo mesma, com mais clareza sobre limites e necessidades.</p></article>
+          <article class="card"><div class="icon">⌁</div><h3>Relacionamentos</h3><p>Compreensão de padrões relacionais, conflitos, dependência emocional e dificuldade de colocar limites.</p></article>
+          <article class="card"><div class="icon">☽</div><h3>Sobrecarga emocional</h3><p>Para quem sente que precisa dar conta de tudo, mesmo quando está emocionalmente esgotada.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="funciona">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Como funciona o atendimento</span>
+          <h2>Um processo acolhedor e transformador</h2>
+          <p>Do primeiro contato ao acompanhamento terapêutico, tudo é conduzido com sigilo, respeito e clareza.</p>
+        </div>
+        <div class="process-grid">
+          <div class="step"><h3>Primeiro contato</h3><p>Você envia uma mensagem pelo WhatsApp e conta, de forma breve, o que está vivendo.</p></div>
+          <div class="step"><h3>Agendamento</h3><p>Definimos juntas o melhor dia, horário e formato: presencial ou online.</p></div>
+          <div class="step"><h3>Consulta</h3><p>Um espaço de escuta acolhedora para compreender suas questões e sentimentos.</p></div>
+          <div class="step"><h3>Caminho terapêutico</h3><p>Com acolhimento e direção, seguimos construindo novas formas de viver.</p></div>
+        </div>
+        <div class="format-box">
+          <strong>Atendimento presencial e online</strong>
+          <p>Você escolhe o formato que faz mais sentido para sua rotina. O atendimento online é realizado por videochamada, com a mesma qualidade, acolhimento e sigilo profissional.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2>Dúvidas comuns antes de começar</h2>
+        </div>
+        <div class="faq">
+          <details open><summary>O atendimento é presencial ou online?</summary><p>Os dois. O atendimento pode ser realizado presencialmente em Curitiba/PR ou online por videochamada.</p></details>
+          <details><summary>Como sei se preciso fazer terapia?</summary><p>Se você sente ansiedade, culpa, autocobrança, tristeza recorrente, sobrecarga ou dificuldade de lidar com relações e limites, a terapia pode ajudar.</p></details>
+          <details><summary>Quanto tempo dura uma sessão?</summary><p>As sessões geralmente têm duração aproximada de 50 minutos.</p></details>
+          <details><summary>Quanto tempo dura o processo terapêutico?</summary><p>Não existe um prazo único. O tempo depende das demandas, objetivos e evolução de cada pessoa.</p></details>
+          <details><summary>Como faço para agendar?</summary><p>Você pode entrar em contato pelo WhatsApp para verificar disponibilidade de horários e tirar dúvidas iniciais.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="cta-bar">
+          <div>
+            <h2>Vamos dar o primeiro passo juntas?</h2>
+            <p>Agende sua consulta e comece a transformar sua história.</p>
+          </div>
+          <a class="btn btn-white" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20agendar%20uma%20consulta.">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Gabriella Trevizan • Psicóloga Clínica • CRP 08/46868<br>
+      WhatsApp: (41) 99955-8667 • gabriellatrevizan@hotmail.com
+    </div>
+  </footer>
+</body>
+</html>
