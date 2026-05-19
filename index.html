@@ -11,30 +11,239 @@
   <style>
     :root{--bg:#f8f3fb;--paper:#fffaf7;--soft:#eee7f4;--lilac:#8f7aa8;--lilac-dark:#6f5a87;--lilac-deep:#4f3f63;--text:#302a27;--muted:#736a76;--line:rgba(111,90,135,.18);--shadow:0 26px 80px rgba(79,63,99,.14);--max:1180px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);line-height:1.65;background:var(--bg);overflow-x:hidden}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.container{width:min(100% - 36px,var(--max));margin:0 auto}
+
+    /* ── Top strip ── */
     .top-strip{background:var(--lilac-dark);color:#fff;text-align:center;padding:8px 16px;font-size:.95rem;font-weight:600}
-    header{position:sticky;top:0;z-index:30;background:#d8cfdf;border-bottom:1px solid rgba(255,255,255,.45);backdrop-filter:blur(14px)}.nav{min-height:96px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{line-height:1;min-width:230px;color:#fff}.brand strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2.1rem;font-weight:700;letter-spacing:.01em;color:#fff}.brand span{display:block;margin-top:7px;color:#f0e6f8;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}.menu{display:flex;align-items:center;gap:30px;color:var(--lilac-deep);font-weight:800;font-size:.9rem;text-transform:uppercase;white-space:nowrap}.menu a:hover{color:var(--lilac-dark)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid transparent;cursor:pointer;font-weight:800;transition:.22s ease;white-space:nowrap}.btn:hover{transform:translateY(-2px)}.btn-nav{background:var(--lilac-dark);color:white;border-radius:6px;padding:18px 28px;font-size:1rem;text-transform:uppercase;box-shadow:0 12px 30px rgba(111,90,135,.18)}.btn-main{background:var(--lilac);color:white;border-radius:6px;padding:17px 28px;box-shadow:0 14px 32px rgba(111,90,135,.22)}.btn-instagram{border-color:var(--lilac-dark);color:var(--lilac-deep);border-radius:999px;padding:14px 24px;background:transparent}.btn-white{background:white;color:var(--lilac-deep);border-radius:999px;padding:15px 28px}
-    .hero{background:linear-gradient(90deg,#fbf7fd 0%,#f3edf8 52%,#e4d8ee 100%);overflow:hidden}.hero-grid{min-height:680px;display:grid;grid-template-columns:.95fr .85fr;align-items:center;gap:48px}.hero-copy{padding:70px 0;position:relative;z-index:2}.eyebrow{display:block;margin-bottom:20px;color:var(--lilac-dark);text-transform:uppercase;font-weight:900;letter-spacing:.18em;font-size:.78rem}h1,h2,h3{margin:0;font-family:'Cormorant Garamond',serif;line-height:1.04;letter-spacing:-.025em;color:var(--text)}h1{font-size:clamp(3.1rem,5.5vw,5.6rem);max-width:760px;color:var(--lilac-dark);font-weight:700}h2{font-size:clamp(2.25rem,4vw,4.1rem);font-weight:700}h3{font-size:1.55rem;font-weight:700}.lead{margin:24px 0 0;max-width:620px;font-size:1.12rem;color:#151515;font-weight:700}.lead span{display:block;margin-top:10px}.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}.hero-photo{width:100%;min-height:680px;align-self:stretch;background:url('hero.png') center bottom/contain no-repeat;background-color:transparent;filter:saturate(.98) contrast(.98)}
-    section{padding:86px 0;border-top:1px solid rgba(111,90,135,.1)}.split{display:grid;grid-template-columns:.82fr 1fr;gap:52px;align-items:center}.about-photo{min-height:560px;background:url('sobre.png') center bottom/contain no-repeat;background-color:transparent;box-shadow:none;border:none;border-radius:0}.about-card{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,5vw,52px);box-shadow:var(--shadow)}.about-text p{color:var(--muted);margin:18px 0 0;font-size:1.03rem}
-    .section-head{text-align:center;max-width:790px;margin:0 auto 48px}.section-head p{margin:14px auto 0;max-width:640px;color:var(--muted)}.soft{background:linear-gradient(180deg,#faf7fd,#eee7f4)}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:980px;margin:0 auto}.card{background:rgba(255,250,247,.9);border:1px solid var(--line);border-radius:18px;padding:30px 28px;min-height:210px;transition:.22s ease}.card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(79,63,99,.12)}.card h3{color:var(--lilac-deep);display:flex;align-items:center;gap:10px;margin-bottom:14px}.bullet{width:14px;height:14px;border-radius:999px;background:var(--lilac-dark);display:inline-block;flex:0 0 14px}.card .question{color:var(--text);font-weight:800;font-size:1rem;margin:0 0 8px}.card p{color:var(--muted);font-size:.98rem;margin:0}
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step;align-items:start}.step{counter-increment:step;text-align:center;padding:18px;position:relative}.step:before{content:counter(step);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 15px;background:var(--paper);border:1px solid var(--line);color:var(--lilac-deep);font-weight:900;font-size:1.2rem}.step h3{font-size:1.25rem;font-family:Inter,sans-serif;letter-spacing:0}.step p{color:var(--muted);font-size:.92rem;margin:8px 0 0}.format-box{margin-top:42px;background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));color:white;border-radius:18px;padding:34px;display:grid;gap:8px;box-shadow:var(--shadow)}.format-box p{margin:0;color:rgba(255,255,255,.9)}
-    .faq{max-width:860px;margin:0 auto;display:grid;gap:14px}details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:21px 23px}summary{cursor:pointer;font-weight:900;color:var(--text)}details p{color:var(--muted);margin-bottom:0}.cta-bar{background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));border-radius:18px;color:white;padding:26px 32px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:var(--shadow)}.cta-bar h2{font-size:2rem;color:white}.cta-bar p{margin:4px 0 0;color:rgba(255,255,255,.9)}
-    footer{background:var(--lilac-dark);color:rgba(255,255,255,.82);text-align:center;padding:38px 0;font-size:.92rem}.float-whats{position:fixed;right:18px;bottom:18px;z-index:40;width:58px;height:58px;border-radius:50%;background:#16a34a;color:white;display:grid;place-items:center;box-shadow:0 12px 34px rgba(22,163,74,.34)}
-    @media(max-width:1100px){.menu{gap:18px;font-size:.82rem}.brand{min-width:190px}.btn-nav{padding:15px 20px}}@media(max-width:900px){.menu{display:none}.hero-grid{grid-template-columns:1fr;min-height:auto;gap:0}.hero-copy{padding:58px 0 28px}.hero-photo{min-height:520px;margin-bottom:42px}.split{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(2,1fr)}.cta-bar{grid-template-columns:1fr;text-align:center}}@media(max-width:620px){.top-strip{font-size:.84rem}.nav{min-height:76px}.brand strong{font-size:1.55rem}.nav .btn{display:none}.hero-photo{min-height:440px}.process-grid{grid-template-columns:1fr}section{padding:62px 0}h1{font-size:clamp(2.6rem,14vw,4rem)}.about-photo{min-height:420px}}
+
+    /* ── Header / Nav ── */
+    header{position:sticky;top:0;z-index:30;background:rgba(216,207,223,.96);border-bottom:1px solid rgba(255,255,255,.45);backdrop-filter:blur(14px)}
+    .nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    /* FIX: cor do nome — era branco (#fff) em fundo claro, agora usa roxo escuro com bom contraste */
+    .brand{line-height:1;min-width:200px}
+    .brand strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;letter-spacing:.01em;color:var(--lilac-deep)}
+    .brand span{display:block;margin-top:6px;color:var(--lilac-dark);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+    .menu{display:flex;align-items:center;gap:24px;color:var(--lilac-deep);font-weight:700;font-size:.86rem;text-transform:uppercase;white-space:nowrap}
+    .menu a:hover{color:var(--lilac)}
+    .nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
+
+    /* ── Buttons ── */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;cursor:pointer;font-weight:800;transition:.22s ease;white-space:nowrap}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-nav{background:var(--lilac-dark);color:white;border-radius:6px;padding:14px 22px;font-size:.88rem;text-transform:uppercase;box-shadow:0 8px 24px rgba(111,90,135,.22)}
+    .btn-main{background:var(--lilac);color:white;border-radius:8px;padding:17px 30px;font-size:1rem;box-shadow:0 14px 32px rgba(111,90,135,.22)}
+    .btn-white{background:white;color:var(--lilac-deep);border-radius:999px;padding:15px 28px;font-weight:800}
+
+    /* ── FIX: Instagram movido para o nav como ícone circular com degradê ── */
+    .btn-insta{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 14px rgba(220,39,67,.3);transition:.22s ease}
+    .btn-insta:hover{transform:translateY(-2px) scale(1.08);box-shadow:0 8px 22px rgba(220,39,67,.42)}
+
+    /* ── Hero ── */
+    .hero{background:linear-gradient(105deg,#fbf7fd 0%,#f3edf8 55%,#e4d8ee 100%);overflow:hidden}
+    /* FIX: grid ajustado para o texto ter mais espaço e não ser espremido pela foto */
+    .hero-grid{min-height:660px;display:grid;grid-template-columns:1fr .72fr;align-items:center;gap:40px}
+    /* FIX: hero-copy — flex para centralizar verticalmente, padding equilibrado */
+    .hero-copy{padding:72px 0 60px;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center}
+    .eyebrow{display:block;margin-bottom:18px;color:var(--lilac-dark);text-transform:uppercase;font-weight:900;letter-spacing:.18em;font-size:.76rem}
+    h1,h2,h3{margin:0;font-family:'Cormorant Garamond',serif;line-height:1.06;letter-spacing:-.02em;color:var(--text)}
+    /* FIX: h1 com tamanho mais controlado para não vazar da coluna */
+    h1{font-size:clamp(2.5rem,3.8vw,4.6rem);color:var(--lilac-deep);font-weight:700;max-width:580px}
+    h2{font-size:clamp(2rem,3.5vw,3.6rem);font-weight:700}
+    h3{font-size:1.45rem;font-weight:700}
+    .lead{margin:22px 0 0;max-width:520px;font-size:1.05rem;color:#3a3237;font-weight:600;line-height:1.7}
+    .lead span{display:block;margin-top:10px;color:var(--lilac-dark);font-weight:700}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+    .hero-photo{width:100%;min-height:660px;align-self:stretch;background:url('hero.png') center bottom/contain no-repeat}
+
+    /* ── Sections ── */
+    section{padding:86px 0;border-top:1px solid rgba(111,90,135,.1)}
+    .split{display:grid;grid-template-columns:.85fr 1fr;gap:52px;align-items:center}
+
+    /* FIX: sobre.png — substituído por tag <img> real; background-image CSS era a causa da imagem não aparecer */
+    .about-photo-wrap{min-height:520px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+    .about-photo-wrap img{max-height:560px;width:100%;object-fit:contain;object-position:center bottom;display:block}
+
+    .about-card{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,5vw,52px);box-shadow:var(--shadow)}
+    .about-text p{color:var(--muted);margin:18px 0 0;font-size:1.03rem}
+
+    .section-head{text-align:center;max-width:790px;margin:0 auto 48px}.section-head p{margin:14px auto 0;max-width:640px;color:var(--muted)}
+    .soft{background:linear-gradient(180deg,#faf7fd,#eee7f4)}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:980px;margin:0 auto}
+    .card{background:rgba(255,250,247,.9);border:1px solid var(--line);border-radius:18px;padding:30px 28px;min-height:210px;transition:.22s ease}.card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(79,63,99,.12)}.card h3{color:var(--lilac-deep);display:flex;align-items:center;gap:10px;margin-bottom:14px}.bullet{width:14px;height:14px;border-radius:999px;background:var(--lilac-dark);display:inline-block;flex:0 0 14px}.card .question{color:var(--text);font-weight:800;font-size:1rem;margin:0 0 8px}.card p{color:var(--muted);font-size:.98rem;margin:0}
+
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step;align-items:start}.step{counter-increment:step;text-align:center;padding:18px;position:relative}.step:before{content:counter(step);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 15px;background:var(--paper);border:1px solid var(--line);color:var(--lilac-deep);font-weight:900;font-size:1.2rem}.step h3{font-size:1.2rem;font-family:Inter,sans-serif;letter-spacing:0}.step p{color:var(--muted);font-size:.92rem;margin:8px 0 0}.format-box{margin-top:42px;background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));color:white;border-radius:18px;padding:34px;display:grid;gap:8px;box-shadow:var(--shadow)}.format-box p{margin:0;color:rgba(255,255,255,.9)}
+
+    .faq{max-width:860px;margin:0 auto;display:grid;gap:14px}details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:21px 23px}summary{cursor:pointer;font-weight:900;color:var(--text)}details p{color:var(--muted);margin-bottom:0}
+    .cta-bar{background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));border-radius:18px;color:white;padding:26px 32px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:var(--shadow)}.cta-bar h2{font-size:2rem;color:white}.cta-bar p{margin:4px 0 0;color:rgba(255,255,255,.9)}
+
+    /* ── Footer ── */
+    footer{background:var(--lilac-deep);color:rgba(255,255,255,.82);padding:42px 0;font-size:.92rem}
+    .footer-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+    .footer-insta{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-weight:700;font-size:.85rem;transition:.2s ease}
+    .footer-insta:hover{background:rgba(255,255,255,.22)}
+
+    /* ── Float WhatsApp ── */
+    .float-whats{position:fixed;right:20px;bottom:20px;z-index:40;width:58px;height:58px;border-radius:50%;background:#16a34a;color:white;display:grid;place-items:center;box-shadow:0 12px 34px rgba(22,163,74,.38);transition:.22s ease}
+    .float-whats:hover{transform:scale(1.1);box-shadow:0 16px 40px rgba(22,163,74,.46)}
+
+    /* ── Responsive ── */
+    @media(max-width:1100px){.menu{gap:16px;font-size:.8rem}.brand{min-width:170px}.btn-nav{padding:12px 16px;font-size:.82rem}}
+    @media(max-width:900px){.menu{display:none}.hero-grid{grid-template-columns:1fr;min-height:auto;gap:0}.hero-copy{padding:52px 0 24px}.hero-photo{min-height:480px}.split{grid-template-columns:1fr}.about-photo-wrap{min-height:auto;padding:20px 0}.about-photo-wrap img{max-height:400px}.cards{grid-template-columns:1fr}.process-grid{grid-template-columns:repeat(2,1fr)}.cta-bar{grid-template-columns:1fr;text-align:center}}
+    @media(max-width:620px){.top-strip{font-size:.82rem}.nav{min-height:72px}.brand strong{font-size:1.5rem}.nav .btn-nav{display:none}.hero-photo{min-height:380px}.process-grid{grid-template-columns:1fr}section{padding:60px 0}h1{font-size:clamp(2.2rem,10vw,3.4rem)}.about-photo-wrap img{max-height:300px}}
   </style>
 </head>
 <body>
-  <a class="float-whats" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20agendar%20uma%20consulta." aria-label="WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.86 3 3.03 8.83 3.03 16c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75A12.9 12.9 0 0 0 16.04 29C23.21 29 29 23.17 29 16S23.21 3 16.04 3Zm0 23.76c-2.03 0-4.02-.54-5.76-1.56l-.41-.24-3.96 1.04 1.06-3.86-.27-.43A10.69 10.69 0 0 1 5.27 16c0-5.94 4.83-10.77 10.77-10.77 5.91 0 10.72 4.83 10.72 10.77s-4.81 10.76-10.72 10.76Zm5.9-8.06c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.72.16-.21.32-.83 1.05-1.02 1.27-.19.21-.37.24-.69.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.15-.15.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.15 3.09 1.31 3.3c.16.21 2.27 3.46 5.5 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg></a>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a class="float-whats" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20agendar%20uma%20consulta." aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M16.04 3C8.86 3 3.03 8.83 3.03 16c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75A12.9 12.9 0 0 0 16.04 29C23.21 29 29 23.17 29 16S23.21 3 16.04 3Zm0 23.76c-2.03 0-4.02-.54-5.76-1.56l-.41-.24-3.96 1.04 1.06-3.86-.27-.43A10.69 10.69 0 0 1 5.27 16c0-5.94 4.83-10.77 10.77-10.77 5.91 0 10.72 4.83 10.72 10.77s-4.81 10.76-10.72 10.76Zm5.9-8.06c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.72.16-.21.32-.83 1.05-1.02 1.27-.19.21-.37.24-.69.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.15-.15.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.15 3.09 1.31 3.3c.16.21 2.27 3.46 5.5 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>
+  </a>
+
   <div class="top-strip">📍 Atendimento presencial em Curitiba e online para todo o mundo.</div>
-  <header><div class="container nav"><a class="brand" href="#home"><strong>Gabriella Trevizan</strong><span>Psicóloga</span></a><nav class="menu" aria-label="Menu principal"><a href="#home">Home</a><a href="#sobre">Sobre mim</a><a href="#especialidades">Especialidades</a><a href="#faq">Perguntas frequentes</a><a href="#contato">Contato</a></nav><a class="btn btn-nav" href="#contato">Fale comigo</a></div></header>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <strong>Gabriella Trevizan</strong>
+        <span>Psicóloga Clínica</span>
+      </a>
+      <nav class="menu" aria-label="Menu principal">
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre mim</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#faq">Perguntas frequentes</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <!-- FIX: Instagram agora fica no nav como ícone circular com degradê oficial -->
+      <div class="nav-actions">
+        <a class="btn-insta" href="https://www.instagram.com/gabriella__psi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @gabriella__psi">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a class="btn btn-nav" href="#contato">Fale comigo</a>
+      </div>
+    </div>
+  </header>
+
   <main id="home">
-    <section class="hero"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">Psicologia clínica</span><h1>Você sente que sua mente não para e que precisa dar conta de tudo?</h1><p class="lead">Se você vive cansada, ansiosa e sobrecarregada — especialmente na maternidade — a terapia pode te ajudar a desacelerar e viver com mais leveza.<span>A ansiedade não precisa controlar sua vida.</span></p><div class="hero-actions"><a class="btn btn-main" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero começar a terapia</a><a class="btn btn-instagram" href="https://www.instagram.com/gabriella__psi/" target="_blank" rel="noopener noreferrer">Instagram</a></div></div><div class="hero-photo" role="img" aria-label="Gabriella Trevizan, psicóloga clínica"></div></div></section>
-    <section id="sobre"><div class="container split"><div class="about-photo" role="img" aria-label="Foto profissional de Gabriella Trevizan"></div><div class="about-card about-text"><h2>Quem é Gabriella Trevizan?</h2><p>Sou psicóloga formada pela Universidade Tuiuti do Paraná e atuo com a abordagem da Terapia Cognitivo-Comportamental (TCC). Atualmente, estou em especialização em Práticas Baseadas em Evidências, buscando oferecer um atendimento cada vez mais ético, atualizado e eficaz.</p><p>A Terapia Cognitivo-Comportamental (TCC) é uma abordagem que ajuda você a entender como seus pensamentos influenciam suas emoções e comportamentos. A partir disso, trabalhamos juntas formas mais saudáveis e realistas de lidar com o que você sente no dia a dia.</p><p>Atendo mulheres que se sentem ansiosas, sobrecarregadas e mentalmente exaustas — que muitas vezes precisam dar conta de tudo, mas se sentem esgotadas por dentro.</p><p>Acredito que a terapia é um espaço seguro e acolhedor, onde você pode se reconectar consigo mesma, sem julgamentos, respeitando seu tempo e sua história.</p><p>Se você sente que precisa de ajuda, estou aqui para caminhar com você.</p></div></div></section>
-    <section id="especialidades" class="soft"><div class="container"><div class="section-head"><span class="eyebrow">Especialidades</span><h2>Como posso te ajudar</h2><p>Atendimento psicológico para mulheres que vivem ansiedade, autocobrança, sobrecarga e desafios emocionais.</p></div><div class="cards"><article class="card"><h3><span class="bullet"></span>Ansiedade</h3><p class="question">Sua mente não para?</p><p>Pensamentos acelerados, preocupação constante e dificuldade de relaxar, mesmo quando está tudo “bem”.</p></article><article class="card"><h3><span class="bullet"></span>Autocobrança e culpa</h3><p class="question">Você sente que nunca faz o suficiente?</p><p>Se cobra o tempo todo, se culpa com frequência e sente dificuldade de se acolher.</p></article><article class="card"><h3><span class="bullet"></span>Maternidade</h3><p class="question">A maternidade tem sido mais pesada do que você imaginava?</p><p>Cansaço, sobrecarga, culpa e a sensação de precisar dar conta de tudo.</p></article><article class="card"><h3><span class="bullet"></span>Autoestima</h3><p class="question">Você se coloca sempre em segundo plano?</p><p>Dificuldade de se priorizar, impor limites e reconhecer seu próprio valor.</p></article><article class="card"><h3><span class="bullet"></span>Sobrecarga emocional</h3><p class="question">Você se sente constantemente esgotada?</p><p>Mesmo fazendo tudo, parece que nunca é suficiente e o cansaço só aumenta.</p></article></div></div></section>
-    <section id="funciona"><div class="container"><div class="section-head"><span class="eyebrow">Como funciona o atendimento</span><h2>Um processo acolhedor e transformador</h2><p>Do primeiro contato ao acompanhamento terapêutico, tudo é conduzido com sigilo, respeito e clareza.</p></div><div class="process-grid"><div class="step"><h3>Primeiro contato</h3><p>Você envia uma mensagem pelo WhatsApp e conta, de forma breve, o que está vivendo.</p></div><div class="step"><h3>Agendamento</h3><p>Definimos juntas o melhor dia, horário e formato: presencial ou online.</p></div><div class="step"><h3>Consulta</h3><p>Um espaço de escuta acolhedora para compreender suas questões e sentimentos.</p></div><div class="step"><h3>Caminho terapêutico</h3><p>Com acolhimento e direção, seguimos construindo novas formas de viver.</p></div></div><div class="format-box"><strong>Atendimento presencial e online</strong><p>Você escolhe o formato que faz mais sentido para sua rotina. O atendimento online é realizado por videochamada, com a mesma qualidade, acolhimento e sigilo profissional.</p></div></div></section>
-    <section id="faq" class="soft"><div class="container"><div class="section-head"><span class="eyebrow">Perguntas frequentes</span><h2>Dúvidas comuns antes de começar</h2></div><div class="faq"><details open><summary>O atendimento é presencial ou online?</summary><p>Os dois. O atendimento pode ser realizado presencialmente em Curitiba/PR ou online por videochamada para todo o mundo.</p></details><details><summary>Como sei se preciso fazer terapia?</summary><p>Se você sente ansiedade, culpa, autocobrança, tristeza recorrente, sobrecarga ou dificuldade de lidar com relações e limites, a terapia pode ajudar.</p></details><details><summary>Quanto tempo dura uma sessão?</summary><p>As sessões geralmente têm duração aproximada de 50 minutos.</p></details><details><summary>Quanto tempo dura o processo terapêutico?</summary><p>Não existe um prazo único. O tempo depende das demandas, objetivos e evolução de cada pessoa.</p></details><details><summary>Como faço para agendar?</summary><p>Você pode entrar em contato pelo WhatsApp para verificar disponibilidade de horários e tirar dúvidas iniciais.</p></details></div></div></section>
-    <section id="contato"><div class="container"><div class="cta-bar"><div><h2>Vamos dar o primeiro passo juntas?</h2><p>Agende sua consulta e comece a transformar sua história.</p></div><a class="btn btn-white" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Falar no WhatsApp</a></div></div></section>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Psicologia clínica</span>
+          <h1>Você sente que sua mente não para e que precisa dar conta de tudo?</h1>
+          <p class="lead">
+            Se você vive cansada, ansiosa e sobrecarregada — especialmente na maternidade — a terapia pode te ajudar a desacelerar e viver com mais leveza.
+            <span>A ansiedade não precisa controlar sua vida.</span>
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-main" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero começar a terapia</a>
+          </div>
+        </div>
+        <div class="hero-photo" role="img" aria-label="Gabriella Trevizan, psicóloga clínica"></div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="container split">
+        <!-- FIX: tag <img> real — background-image CSS não renderizava a foto -->
+        <div class="about-photo-wrap">
+          <img src="sobre.png" alt="Foto profissional de Gabriella Trevizan, psicóloga clínica" />
+        </div>
+        <div class="about-card about-text">
+          <h2>Quem é Gabriella Trevizan?</h2>
+          <p>Sou psicóloga formada pela Universidade Tuiuti do Paraná e atuo com a abordagem da Terapia Cognitivo-Comportamental (TCC). Atualmente, estou em especialização em Práticas Baseadas em Evidências, buscando oferecer um atendimento cada vez mais ético, atualizado e eficaz.</p>
+          <p>A Terapia Cognitivo-Comportamental (TCC) é uma abordagem que ajuda você a entender como seus pensamentos influenciam suas emoções e comportamentos. A partir disso, trabalhamos juntas formas mais saudáveis e realistas de lidar com o que você sente no dia a dia.</p>
+          <p>Atendo mulheres que se sentem ansiosas, sobrecarregadas e mentalmente exaustas — que muitas vezes precisam dar conta de tudo, mas se sentem esgotadas por dentro.</p>
+          <p>Acredito que a terapia é um espaço seguro e acolhedor, onde você pode se reconectar consigo mesma, sem julgamentos, respeitando seu tempo e sua história.</p>
+          <p>Se você sente que precisa de ajuda, estou aqui para caminhar com você.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESPECIALIDADES -->
+    <section id="especialidades" class="soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Especialidades</span>
+          <h2>Como posso te ajudar</h2>
+          <p>Atendimento psicológico para mulheres que vivem ansiedade, autocobrança, sobrecarga e desafios emocionais.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><h3><span class="bullet"></span>Ansiedade</h3><p class="question">Sua mente não para?</p><p>Pensamentos acelerados, preocupação constante e dificuldade de relaxar, mesmo quando está tudo "bem".</p></article>
+          <article class="card"><h3><span class="bullet"></span>Autocobrança e culpa</h3><p class="question">Você sente que nunca faz o suficiente?</p><p>Se cobra o tempo todo, se culpa com frequência e sente dificuldade de se acolher.</p></article>
+          <article class="card"><h3><span class="bullet"></span>Maternidade</h3><p class="question">A maternidade tem sido mais pesada do que você imaginava?</p><p>Cansaço, sobrecarga, culpa e a sensação de precisar dar conta de tudo.</p></article>
+          <article class="card"><h3><span class="bullet"></span>Autoestima</h3><p class="question">Você se coloca sempre em segundo plano?</p><p>Dificuldade de se priorizar, impor limites e reconhecer seu próprio valor.</p></article>
+          <article class="card"><h3><span class="bullet"></span>Sobrecarga emocional</h3><p class="question">Você se sente constantemente esgotada?</p><p>Mesmo fazendo tudo, parece que nunca é suficiente e o cansaço só aumenta.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA -->
+    <section id="funciona">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Como funciona o atendimento</span>
+          <h2>Um processo acolhedor e transformador</h2>
+          <p>Do primeiro contato ao acompanhamento terapêutico, tudo é conduzido com sigilo, respeito e clareza.</p>
+        </div>
+        <div class="process-grid">
+          <div class="step"><h3>Primeiro contato</h3><p>Você envia uma mensagem pelo WhatsApp e conta, de forma breve, o que está vivendo.</p></div>
+          <div class="step"><h3>Agendamento</h3><p>Definimos juntas o melhor dia, horário e formato: presencial ou online.</p></div>
+          <div class="step"><h3>Consulta</h3><p>Um espaço de escuta acolhedora para compreender suas questões e sentimentos.</p></div>
+          <div class="step"><h3>Caminho terapêutico</h3><p>Com acolhimento e direção, seguimos construindo novas formas de viver.</p></div>
+        </div>
+        <div class="format-box">
+          <strong>Atendimento presencial e online</strong>
+          <p>Você escolhe o formato que faz mais sentido para sua rotina. O atendimento online é realizado por videochamada, com a mesma qualidade, acolhimento e sigilo profissional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Perguntas frequentes</span>
+          <h2>Dúvidas comuns antes de começar</h2>
+        </div>
+        <div class="faq">
+          <details open><summary>O atendimento é presencial ou online?</summary><p>Os dois. O atendimento pode ser realizado presencialmente em Curitiba/PR ou online por videochamada para todo o mundo.</p></details>
+          <details><summary>Como sei se preciso fazer terapia?</summary><p>Se você sente ansiedade, culpa, autocobrança, tristeza recorrente, sobrecarga ou dificuldade de lidar com relações e limites, a terapia pode ajudar.</p></details>
+          <details><summary>Quanto tempo dura uma sessão?</summary><p>As sessões geralmente têm duração aproximada de 50 minutos.</p></details>
+          <details><summary>Quanto tempo dura o processo terapêutico?</summary><p>Não existe um prazo único. O tempo depende das demandas, objetivos e evolução de cada pessoa.</p></details>
+          <details><summary>Como faço para agendar?</summary><p>Você pode entrar em contato pelo WhatsApp para verificar disponibilidade de horários e tirar dúvidas iniciais.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA / CONTATO -->
+    <section id="contato">
+      <div class="container">
+        <div class="cta-bar">
+          <div>
+            <h2>Vamos dar o primeiro passo juntas?</h2>
+            <p>Agende sua consulta e comece a transformar sua história.</p>
+          </div>
+          <a class="btn btn-white" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
   </main>
-  <footer><div class="container">Gabriella Trevizan • Psicóloga Clínica • CRP 08/46868<br>WhatsApp: (41) 99955-8667 • gabriellatrevizan@hotmail.com</div></footer>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>Gabriella Trevizan &bull; Psicóloga Clínica &bull; CRP 08/46868</div>
+        <div>WhatsApp: (41) 99955-8667 &bull; gabriellatrevizan@hotmail.com</div>
+        <a class="footer-insta" href="https://www.instagram.com/gabriella__psi/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          @gabriella__psi
+        </a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
