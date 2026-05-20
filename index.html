@@ -73,14 +73,30 @@
     .section-head{text-align:center;max-width:790px;margin:0 auto 48px}.section-head p{margin:14px auto 0;max-width:640px;color:var(--muted)}
     .soft{background:linear-gradient(180deg,#faf7fd,#eee7f4)}
 
-    /* ── Cards — 5ª card centralizada quando sozinha na linha ── */
+    /* ── Cards ── */
     .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:980px;margin:0 auto}
     .cards > .card:last-child:nth-child(odd){grid-column:1 / -1;max-width:calc(50% - 9px);margin-inline:auto}
     .card{background:rgba(255,250,247,.9);border:1px solid var(--line);border-radius:18px;padding:30px 28px;min-height:210px;transition:.22s ease}.card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(79,63,99,.12)}.card h3{color:var(--lilac-deep);display:flex;align-items:center;gap:10px;margin-bottom:14px}.bullet{width:14px;height:14px;border-radius:999px;background:var(--lilac-dark);display:inline-block;flex:0 0 14px}.card .question{color:var(--text);font-weight:800;font-size:1rem;margin:0 0 8px}.card p{color:var(--muted);font-size:.98rem;margin:0}
 
+    /* ── Mini-CTA pós especialidades ── */
+    .identify-cta{margin:48px auto 0;max-width:720px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:40px 36px;text-align:center;box-shadow:var(--shadow)}
+    .identify-cta p{margin:0;font-size:1.08rem;color:var(--lilac-deep);line-height:1.65;font-weight:600}
+    .identify-cta p strong{color:var(--lilac-deep)}
+    .identify-cta p.identify-sub{margin-top:8px;font-size:.98rem;color:var(--muted);font-weight:400}
+    .identify-cta .btn-identify{margin-top:26px;background:var(--lilac-dark);color:white;border-radius:8px;padding:16px 32px;font-size:1rem;font-weight:800;box-shadow:0 10px 28px rgba(111,90,135,.28)}
+    .identify-cta .btn-identify:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(111,90,135,.38)}
+
+    /* ── Process ── */
     .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step;align-items:start}.step{counter-increment:step;text-align:center;padding:18px;position:relative}.step:before{content:counter(step);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 15px;background:var(--paper);border:1px solid var(--line);color:var(--lilac-deep);font-weight:900;font-size:1.2rem}.step h3{font-size:1.2rem;font-family:Inter,sans-serif;letter-spacing:0}.step p{color:var(--muted);font-size:.92rem;margin:8px 0 0}.format-box{margin-top:42px;background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));color:white;border-radius:18px;padding:34px;display:grid;gap:8px;box-shadow:var(--shadow)}.format-box p{margin:0;color:rgba(255,255,255,.9)}
 
-    /* ── FAQ com indicador +/− customizado ── */
+    /* ── Depoimentos ── */
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1060px;margin:0 auto}
+    .testimonial{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:36px 28px 28px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
+    .testimonial::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:6rem;line-height:.8;color:var(--lilac);opacity:.25;position:absolute;top:16px;left:22px;pointer-events:none;user-select:none}
+    .testimonial-text{color:var(--text);font-size:.98rem;line-height:1.75;margin:0 0 22px;font-style:italic;padding-top:24px}
+    .testimonial-author{font-weight:800;font-size:.8rem;color:var(--lilac-dark);text-transform:uppercase;letter-spacing:.12em}
+
+    /* ── FAQ com indicador +/− ── */
     .faq{max-width:860px;margin:0 auto;display:grid;gap:14px}
     details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:21px 23px}
     details[open]{border-color:var(--lilac)}
@@ -90,7 +106,12 @@
     details[open] summary::after{content:'−'}
     details p{color:var(--muted);margin:14px 0 0}
 
-    .cta-bar{background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));border-radius:18px;color:white;padding:26px 32px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:var(--shadow)}.cta-bar h2{font-size:2rem;color:white}.cta-bar p{margin:4px 0 0;color:rgba(255,255,255,.9)}
+    /* ── CTA bar ── */
+    .cta-bar{background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));border-radius:18px;color:white;padding:26px 32px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:var(--shadow)}
+    .cta-bar h2{font-size:2rem;color:white}
+    .cta-bar > div > p{margin:4px 0 0;color:rgba(255,255,255,.9)}
+    .cta-action{display:flex;flex-direction:column;align-items:center;gap:10px}
+    .cta-urgency{margin:0;font-size:.8rem;color:rgba(255,255,255,.72);text-align:center;font-weight:500;max-width:200px}
 
     /* ── Footer ── */
     footer{background:var(--lilac-deep);color:rgba(255,255,255,.82);padding:42px 0;font-size:.92rem}
@@ -129,13 +150,23 @@
       .hero-grid{grid-template-columns:1fr;min-height:auto;gap:0}
       .hero-copy{padding:52px 0 24px}
       .hero-photo{min-height:480px}
+      /* Reordenação mobile da seção Sobre: texto antes da foto */
       .split{grid-template-columns:1fr}
-      .about-photo-wrap{min-height:auto;padding:20px 0}
+      .about-photo-wrap{order:2;min-height:auto;padding:20px 0}
       .about-photo-wrap img{max-height:400px}
+      .about-card.about-text{order:1}
+      /* Cards */
       .cards{grid-template-columns:1fr}
       .cards > .card:last-child:nth-child(odd){grid-column:auto;max-width:100%;margin-inline:0}
+      .identify-cta{padding:30px 24px}
+      /* Depoimentos */
+      .testimonials{grid-template-columns:1fr}
+      /* Process */
       .process-grid{grid-template-columns:repeat(2,1fr)}
+      /* CTA */
       .cta-bar{grid-template-columns:1fr;text-align:center}
+      .cta-action{align-items:center}
+      .cta-urgency{max-width:100%}
     }
 
     @media(max-width:620px){
@@ -148,6 +179,8 @@
       section{padding:60px 0}
       h1{font-size:clamp(2.2rem,10vw,3.4rem)}
       .about-photo-wrap img{max-height:300px}
+      .testimonials{gap:16px}
+      .identify-cta{padding:28px 20px}
     }
   </style>
 </head>
@@ -175,6 +208,7 @@
         <a href="#home">Home</a>
         <a href="#sobre">Sobre mim</a>
         <a href="#especialidades">Especialidades</a>
+        <a href="#depoimentos">Depoimentos</a>
         <a href="#faq">Perguntas frequentes</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -202,7 +236,8 @@
             <span>A ansiedade não precisa controlar sua vida.</span>
           </p>
           <div class="hero-actions">
-            <a class="btn btn-main" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero começar a terapia</a>
+            <!-- Sugestão 4: linguagem humanizada -->
+            <a class="btn btn-main" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero parar de me sentir assim</a>
           </div>
         </div>
         <div class="hero-photo" role="img" aria-label="Gabriella Trevizan, psicóloga clínica"></div>
@@ -212,6 +247,7 @@
     <!-- SOBRE -->
     <section id="sobre">
       <div class="container split">
+        <!-- No mobile: foto fica depois do texto via CSS order -->
         <div class="about-photo-wrap">
           <img src="sobre.png" alt="Foto profissional de Gabriella Trevizan, psicóloga clínica" loading="lazy" />
         </div>
@@ -241,6 +277,13 @@
           <article class="card"><h3><span class="bullet"></span>Autoestima</h3><p class="question">Você se coloca sempre em segundo plano?</p><p>Dificuldade de se priorizar, impor limites e reconhecer seu próprio valor.</p></article>
           <article class="card"><h3><span class="bullet"></span>Sobrecarga emocional</h3><p class="question">Você se sente constantemente esgotada?</p><p>Mesmo fazendo tudo, parece que nunca é suficiente e o cansaço só aumenta.</p></article>
         </div>
+
+        <!-- Mini-CTA pós especialidades -->
+        <div class="identify-cta">
+          <p>Se algum desses pontos falou com você,<br><strong>você não precisa continuar carregando isso sozinha.</strong></p>
+          <p class="identify-sub">A terapia é um espaço só seu — para respirar, se entender e viver com mais leveza.</p>
+          <a class="btn btn-identify" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Me%20identifiquei%20com%20o%20que%20li%20no%20seu%20site%20e%20gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero me sentir melhor →</a>
+        </div>
       </div>
     </section>
 
@@ -265,8 +308,33 @@
       </div>
     </section>
 
+    <!-- DEPOIMENTOS -->
+    <section id="depoimentos" class="soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Depoimentos</span>
+          <h2>O que dizem as pacientes</h2>
+          <p>Relatos reais compartilhados com autorização, preservando a identidade de cada pessoa.</p>
+        </div>
+        <div class="testimonials">
+          <div class="testimonial">
+            <p class="testimonial-text">"Eu achava que não tinha tempo para terapia. Na verdade, eu não tinha energia para mais nada — e estava descontando isso em tudo. Depois de alguns meses, aprendi a existir na minha própria rotina. Não me sinto mais uma estranha dentro da minha vida."</p>
+            <span class="testimonial-author">L., 31 anos</span>
+          </div>
+          <div class="testimonial">
+            <p class="testimonial-text">"Cheguei achando que o problema era falta de organização. A Gabriella me ajudou a entender que era culpa e autocobrança que me esgotavam. Hoje consigo descansar sem me sentir culpada por isso — e isso mudou tudo."</p>
+            <span class="testimonial-author">C., 36 anos, mãe de dois filhos</span>
+          </div>
+          <div class="testimonial">
+            <p class="testimonial-text">"Fui procurar ajuda quando senti que não conseguia mais. A Gabriella tem uma escuta muito acolhedora, sem julgamentos. Me surpreendi com o quanto uma sessão por semana pode mudar a forma como você se vê e se trata."</p>
+            <span class="testimonial-author">M., 28 anos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
-    <section id="faq" class="soft">
+    <section id="faq">
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Perguntas frequentes</span>
@@ -275,6 +343,9 @@
         <div class="faq">
           <details open><summary>O atendimento é presencial ou online?</summary><p>Os dois. O atendimento pode ser realizado presencialmente em Curitiba/PR ou online por videochamada para todo o mundo.</p></details>
           <details><summary>Como sei se preciso fazer terapia?</summary><p>Se você sente ansiedade, culpa, autocobrança, tristeza recorrente, sobrecarga ou dificuldade de lidar com relações e limites, a terapia pode ajudar.</p></details>
+          <!-- Sugestão 6: novas perguntas -->
+          <details><summary>Não tenho tempo — como a terapia cabe na minha rotina?</summary><p>Uma sessão semanal de 50 minutos. Online, sem deslocamento, no horário que funcionar para você. A maioria das pacientes descobre que sempre teve esse tempo — mas nunca havia se colocado como prioridade. Começar a terapia é, em si, um ato de se priorizar.</p></details>
+          <details><summary>Preciso estar em crise para começar a terapia?</summary><p>Não. A terapia é mais eficaz exatamente antes da crise — quando você ainda tem energia para trabalhar os padrões que te esgotam. Se você sente que algo não está bem, isso já é motivo suficiente. Você não precisa esperar piorar para começar a se cuidar.</p></details>
           <details><summary>Quanto tempo dura uma sessão?</summary><p>As sessões geralmente têm duração aproximada de 50 minutos.</p></details>
           <details><summary>Quanto tempo dura o processo terapêutico?</summary><p>Não existe um prazo único. O tempo depende das demandas, objetivos e evolução de cada pessoa.</p></details>
           <details><summary>Como faço para agendar?</summary><p>Você pode entrar em contato pelo WhatsApp para verificar disponibilidade de horários e tirar dúvidas iniciais.</p></details>
@@ -283,14 +354,18 @@
     </section>
 
     <!-- CTA / CONTATO -->
-    <section id="contato">
+    <section id="contato" class="soft">
       <div class="container">
         <div class="cta-bar">
           <div>
             <h2>Vamos dar o primeiro passo juntas?</h2>
             <p>Agende sua consulta e comece a transformar sua história.</p>
           </div>
-          <a class="btn btn-white" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Falar no WhatsApp</a>
+          <!-- Sugestão 4 + 5: botão humanizado e urgência -->
+          <div class="cta-action">
+            <a class="btn btn-white" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero dar o primeiro passo</a>
+            <p class="cta-urgency">Você não precisa esperar piorar para começar a se cuidar.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -324,7 +399,6 @@
       toggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Fechar menu ao clicar em um link
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.remove('open');
