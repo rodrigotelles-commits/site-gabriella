@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gabriella Trevizan | Psicóloga Clínica</title>
+  <title>Gabriella Trevizan | CRP 08/46868 | Psicóloga Clínica</title>
   <meta name="description" content="Gabriella Trevizan, psicóloga clínica CRP 08/46868. Atendimento psicológico presencial em Curitiba e online para todo o mundo." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Gabriella Trevizan | Psicóloga Clínica" />
+  <meta property="og:title" content="Gabriella Trevizan | CRP 08/46868 | Psicóloga Clínica" />
   <meta property="og:description" content="Atendimento psicológico presencial em Curitiba e online para todo o mundo." />
   <meta property="og:image" content="hero.png" />
   <meta property="og:type" content="website" />
@@ -19,66 +18,63 @@
     :root{--bg:#f8f3fb;--paper:#fffaf7;--soft:#eee7f4;--lilac:#8f7aa8;--lilac-dark:#6f5a87;--lilac-deep:#4f3f63;--text:#302a27;--muted:#736a76;--line:rgba(111,90,135,.18);--shadow:0 26px 80px rgba(79,63,99,.14);--max:1180px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);line-height:1.65;background:var(--bg);overflow-x:hidden}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.container{width:min(100% - 36px,var(--max));margin:0 auto}
 
-    /* ── Top strip ── */
     .top-strip{background:var(--lilac-dark);color:#fff;text-align:center;padding:8px 16px;font-size:.95rem;font-weight:600}
 
-    /* ── Header / Nav ── */
     header{position:sticky;top:0;z-index:30;background:rgba(216,207,223,.96);border-bottom:1px solid rgba(255,255,255,.45);backdrop-filter:blur(14px)}
     .nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
     .brand{line-height:1;min-width:200px}
     .brand strong{display:block;font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;letter-spacing:.01em;color:var(--lilac-deep)}
-    .brand span{display:block;margin-top:6px;color:var(--lilac-dark);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+    .brand span{display:block;margin-top:6px;color:var(--lilac-dark);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800}
     .menu{display:flex;align-items:center;gap:24px;color:var(--lilac-deep);font-weight:700;font-size:.86rem;text-transform:uppercase;white-space:nowrap}
     .menu a:hover{color:var(--lilac)}
     .nav-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}
 
-    /* ── Hamburger ── */
     .menu-toggle{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;color:var(--lilac-deep);flex-shrink:0}
     .menu-toggle span{display:block;width:24px;height:2px;background:currentColor;border-radius:2px;transition:.25s ease;transform-origin:center}
     .menu-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
     .menu-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0)}
     .menu-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-    /* ── Buttons ── */
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid transparent;cursor:pointer;font-weight:800;transition:.22s ease;white-space:nowrap}
     .btn:hover{transform:translateY(-2px)}
     .btn-nav{background:var(--lilac-dark);color:white;border-radius:6px;padding:14px 22px;font-size:.88rem;text-transform:uppercase;box-shadow:0 8px 24px rgba(111,90,135,.22)}
     .btn-main{background:var(--lilac);color:white;border-radius:8px;padding:17px 30px;font-size:1rem;box-shadow:0 14px 32px rgba(111,90,135,.22)}
     .btn-white{background:white;color:var(--lilac-deep);border-radius:999px;padding:15px 28px;font-weight:800}
+    .btn-whats-inline{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#16a34a;color:white;border-radius:8px;padding:16px 32px;font-size:1rem;font-weight:800;box-shadow:0 10px 28px rgba(22,163,74,.28);transition:.22s ease}
+    .btn-whats-inline:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(22,163,74,.38)}
+    .btn-beneficios{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:white;color:var(--lilac-deep);border-radius:8px;padding:18px 36px;font-size:1.05rem;font-weight:800;box-shadow:0 10px 28px rgba(0,0,0,.14);transition:.22s ease;margin-top:40px}
+    .btn-beneficios:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(0,0,0,.2)}
 
-    /* ── Hero ── */
     .hero{background:linear-gradient(105deg,#fbf7fd 0%,#f3edf8 55%,#e4d8ee 100%);overflow:hidden}
     .hero-grid{min-height:660px;display:grid;grid-template-columns:1fr .72fr;align-items:center;gap:40px}
     .hero-copy{padding:72px 0 60px;position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center}
     .eyebrow{display:block;margin-bottom:18px;color:var(--lilac-dark);text-transform:uppercase;font-weight:900;letter-spacing:.18em;font-size:.76rem}
+    .eyebrow-destaque{display:inline-block;margin-bottom:16px;color:var(--lilac-deep);text-transform:uppercase;font-weight:900;letter-spacing:.14em;font-size:.9rem;background:var(--soft);padding:7px 20px;border-radius:999px;border:1px solid var(--line)}
     h1,h2,h3{margin:0;font-family:'Cormorant Garamond',serif;line-height:1.06;letter-spacing:-.02em;color:var(--text)}
     h1{font-size:clamp(2.5rem,3.8vw,4.6rem);color:var(--lilac-deep);font-weight:700;max-width:580px}
     h2{font-size:clamp(2rem,3.5vw,3.6rem);font-weight:700}
     h3{font-size:1.45rem;font-weight:700}
-    .lead{margin:22px 0 0;max-width:520px;font-size:1.05rem;color:#3a3237;font-weight:600;line-height:1.7}
-    .lead span{display:block;margin-top:10px;color:var(--lilac-dark);font-weight:700}
+    .lead{margin:22px 0 0;max-width:520px;font-size:1.12rem;color:#3a3237;font-weight:600;line-height:1.7}
     .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
     .hero-photo{width:100%;min-height:660px;align-self:stretch;background:url('hero.png') center bottom/contain no-repeat}
 
-    /* ── Sections ── */
     section{padding:86px 0;border-top:1px solid rgba(111,90,135,.1)}
     .split{display:grid;grid-template-columns:.85fr 1fr;gap:52px;align-items:center}
 
     .about-photo-wrap{min-height:520px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
     .about-photo-wrap img{max-height:560px;width:100%;object-fit:contain;object-position:center bottom;display:block}
-
     .about-card{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:clamp(28px,5vw,52px);box-shadow:var(--shadow)}
+    .about-card h2{font-size:clamp(1.5rem,2.2vw,2.3rem);white-space:nowrap;letter-spacing:-.015em}
     .about-text p{color:var(--muted);margin:18px 0 0;font-size:1.03rem}
 
     .section-head{text-align:center;max-width:790px;margin:0 auto 48px}.section-head p{margin:14px auto 0;max-width:640px;color:var(--muted)}
     .soft{background:linear-gradient(180deg,#faf7fd,#eee7f4)}
+    .h2-nowrap{white-space:nowrap;font-size:clamp(1.55rem,2.6vw,2.9rem)}
 
-    /* ── Cards ── */
     .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:980px;margin:0 auto}
     .cards > .card:last-child:nth-child(odd){grid-column:1 / -1;max-width:calc(50% - 9px);margin-inline:auto}
     .card{background:rgba(255,250,247,.9);border:1px solid var(--line);border-radius:18px;padding:30px 28px;min-height:210px;transition:.22s ease}.card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(79,63,99,.12)}.card h3{color:var(--lilac-deep);display:flex;align-items:center;gap:10px;margin-bottom:14px}.bullet{width:14px;height:14px;border-radius:999px;background:var(--lilac-dark);display:inline-block;flex:0 0 14px}.card .question{color:var(--text);font-weight:800;font-size:1rem;margin:0 0 8px}.card p{color:var(--muted);font-size:.98rem;margin:0}
 
-    /* ── Mini-CTA pós especialidades ── */
     .identify-cta{margin:48px auto 0;max-width:720px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:40px 36px;text-align:center;box-shadow:var(--shadow)}
     .identify-cta p{margin:0;font-size:1.08rem;color:var(--lilac-deep);line-height:1.65;font-weight:600}
     .identify-cta p strong{color:var(--lilac-deep)}
@@ -86,17 +82,29 @@
     .identify-cta .btn-identify{margin-top:26px;background:var(--lilac-dark);color:white;border-radius:8px;padding:16px 32px;font-size:1rem;font-weight:800;box-shadow:0 10px 28px rgba(111,90,135,.28)}
     .identify-cta .btn-identify:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(111,90,135,.38)}
 
-    /* ── Process ── */
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step;align-items:start}.step{counter-increment:step;text-align:center;padding:18px;position:relative}.step:before{content:counter(step);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 15px;background:var(--paper);border:1px solid var(--line);color:var(--lilac-deep);font-weight:900;font-size:1.2rem}.step h3{font-size:1.2rem;font-family:Inter,sans-serif;letter-spacing:0}.step p{color:var(--muted);font-size:.92rem;margin:8px 0 0}.format-box{margin-top:42px;background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));color:white;border-radius:18px;padding:34px;display:grid;gap:8px;box-shadow:var(--shadow)}.format-box p{margin:0;color:rgba(255,255,255,.9)}
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step;align-items:start}.step{counter-increment:step;text-align:center;padding:18px;position:relative}.step:before{content:counter(step);width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin:0 auto 15px;background:var(--paper);border:1px solid var(--line);color:var(--lilac-deep);font-weight:900;font-size:1.2rem}.step h3{font-size:1.2rem;font-family:Inter,sans-serif;letter-spacing:0}.step p{color:var(--muted);font-size:.92rem;margin:8px 0 0}
+    .process-cta-wrap{text-align:center;margin:42px 0}
+    .format-box{background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));color:white;border-radius:18px;padding:34px;display:grid;gap:8px;box-shadow:var(--shadow)}.format-box p{margin:0;color:rgba(255,255,255,.9)}
 
-    /* ── Depoimentos ── */
+    /* ── Seção Benefícios ── */
+    .beneficios{background:linear-gradient(145deg,var(--lilac-deep) 0%,#3a2d54 60%,#2d2240 100%)}
+    .beneficios-inner{max-width:780px;margin:0 auto;text-align:center}
+    .beneficios h2{color:white;font-size:clamp(2rem,3.5vw,3.4rem);margin-bottom:10px}
+    .beneficios-intro{font-size:1rem;color:rgba(255,255,255,.72);margin:0 0 40px;font-weight:500}
+    .beneficios-list{list-style:none;margin:0 0 48px;padding:0;display:flex;flex-direction:column;gap:13px;text-align:left;max-width:540px;margin-inline:auto}
+    .beneficios-list li{display:flex;align-items:flex-start;gap:14px;font-size:1.05rem;color:rgba(255,255,255,.9);font-weight:600;line-height:1.5}
+    .beneficios-list li::before{content:'';width:9px;height:9px;border-radius:50%;background:#c4a8e0;flex-shrink:0;margin-top:7px}
+    .beneficios-sep{border:none;border-top:1px solid rgba(255,255,255,.14);margin:44px auto;max-width:360px}
+    .beneficios-emocional{font-size:1.05rem;color:rgba(255,255,255,.85);line-height:1.85;max-width:580px;margin:0 auto}
+    .beneficios-emocional p{margin:0 0 12px}
+    .beneficios-emocional p:last-child{margin:0;font-weight:700;color:white;font-size:1.15rem}
+
     .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1060px;margin:0 auto}
     .testimonial{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:36px 28px 28px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
     .testimonial::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:6rem;line-height:.8;color:var(--lilac);opacity:.25;position:absolute;top:16px;left:22px;pointer-events:none;user-select:none}
     .testimonial-text{color:var(--text);font-size:.98rem;line-height:1.75;margin:0 0 22px;font-style:italic;padding-top:24px}
     .testimonial-author{font-weight:800;font-size:.8rem;color:var(--lilac-dark);text-transform:uppercase;letter-spacing:.12em}
 
-    /* ── FAQ com indicador +/− ── */
     .faq{max-width:860px;margin:0 auto;display:grid;gap:14px}
     details{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:21px 23px}
     details[open]{border-color:var(--lilac)}
@@ -106,14 +114,12 @@
     details[open] summary::after{content:'−'}
     details p{color:var(--muted);margin:14px 0 0}
 
-    /* ── CTA bar ── */
     .cta-bar{background:linear-gradient(135deg,var(--lilac),var(--lilac-dark));border-radius:18px;color:white;padding:26px 32px;display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:var(--shadow)}
     .cta-bar h2{font-size:2rem;color:white}
     .cta-bar > div > p{margin:4px 0 0;color:rgba(255,255,255,.9)}
     .cta-action{display:flex;flex-direction:column;align-items:center;gap:10px}
     .cta-urgency{margin:0;font-size:.8rem;color:rgba(255,255,255,.72);text-align:center;font-weight:500;max-width:200px}
 
-    /* ── Footer ── */
     footer{background:var(--lilac-deep);color:rgba(255,255,255,.82);padding:42px 0;font-size:.92rem}
     .footer-inner{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
     .footer-inner a{color:rgba(255,255,255,.82);transition:.2s ease}
@@ -121,7 +127,6 @@
     .footer-insta{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:999px;background:rgba(255,255,255,.12);color:#fff;font-weight:700;font-size:.85rem;transition:.2s ease}
     .footer-insta:hover{background:rgba(255,255,255,.22)}
 
-    /* ── Botões flutuantes ── */
     .float-btns{position:fixed;right:20px;bottom:20px;z-index:40;display:flex;flex-direction:column;align-items:center;gap:12px}
     .float-btn{width:58px;height:58px;border-radius:50%;color:white;display:grid;place-items:center;box-shadow:0 12px 34px rgba(0,0,0,.22);transition:.22s ease}
     .float-btn:hover{transform:scale(1.1)}
@@ -130,40 +135,28 @@
     .float-insta{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);box-shadow:0 12px 34px rgba(220,39,67,.3)}
     .float-insta:hover{box-shadow:0 16px 40px rgba(220,39,67,.42)}
 
-    /* ── Responsive ── */
     @media(max-width:1100px){.menu{gap:16px;font-size:.8rem}.brand{min-width:170px}.btn-nav{padding:12px 16px;font-size:.82rem}}
 
     @media(max-width:900px){
       .menu-toggle{display:flex}
-      .menu{
-        display:none;
-        position:absolute;top:100%;left:0;right:0;
-        flex-direction:column;align-items:stretch;gap:0;
-        background:rgba(216,207,223,.98);backdrop-filter:blur(14px);
-        border-bottom:1px solid var(--line);
-        box-shadow:0 8px 24px rgba(79,63,99,.12);
-        padding:8px 0
-      }
+      .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(216,207,223,.98);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);box-shadow:0 8px 24px rgba(79,63,99,.12);padding:8px 0}
       .menu.open{display:flex}
       .menu a{padding:14px 24px;border-bottom:1px solid var(--line);white-space:normal}
       .menu a:last-child{border-bottom:none}
       .hero-grid{grid-template-columns:1fr;min-height:auto;gap:0}
       .hero-copy{padding:52px 0 24px}
       .hero-photo{min-height:480px}
-      /* Reordenação mobile da seção Sobre: texto antes da foto */
       .split{grid-template-columns:1fr}
       .about-photo-wrap{order:2;min-height:auto;padding:20px 0}
       .about-photo-wrap img{max-height:400px}
       .about-card.about-text{order:1}
-      /* Cards */
+      .about-card h2{white-space:normal;font-size:clamp(1.6rem,5vw,2.2rem)}
+      .h2-nowrap{white-space:normal}
       .cards{grid-template-columns:1fr}
       .cards > .card:last-child:nth-child(odd){grid-column:auto;max-width:100%;margin-inline:0}
       .identify-cta{padding:30px 24px}
-      /* Depoimentos */
       .testimonials{grid-template-columns:1fr}
-      /* Process */
       .process-grid{grid-template-columns:repeat(2,1fr)}
-      /* CTA */
       .cta-bar{grid-template-columns:1fr;text-align:center}
       .cta-action{align-items:center}
       .cta-urgency{max-width:100%}
@@ -181,12 +174,13 @@
       .about-photo-wrap img{max-height:300px}
       .testimonials{gap:16px}
       .identify-cta{padding:28px 20px}
+      .beneficios-list{gap:10px}
+      .btn-beneficios{padding:16px 26px;font-size:.98rem}
     }
   </style>
 </head>
 <body>
 
-  <!-- Botões flutuantes -->
   <div class="float-btns">
     <a class="float-btn float-insta" href="https://www.instagram.com/gabriella__psi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @gabriella__psi">
       <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
@@ -202,21 +196,19 @@
     <div class="container nav">
       <a class="brand" href="#home">
         <strong>Gabriella Trevizan</strong>
-        <span>Psicóloga Clínica</span>
+        <span>Psicóloga Clínica &middot; CRP 08/46868</span>
       </a>
       <nav class="menu" id="main-menu" aria-label="Menu principal">
         <a href="#home">Home</a>
-        <a href="#sobre">Sobre mim</a>
         <a href="#especialidades">Especialidades</a>
+        <a href="#sobre">Sobre mim</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#faq">Perguntas frequentes</a>
         <a href="#contato">Contato</a>
       </nav>
       <div class="nav-actions">
         <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-menu">
-          <span></span>
-          <span></span>
-          <span></span>
+          <span></span><span></span><span></span>
         </button>
         <a class="btn btn-nav" href="#contato">Fale comigo</a>
       </div>
@@ -229,14 +221,10 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Psicologia clínica</span>
-          <h1>Você sente que sua mente não para e que precisa dar conta de tudo?</h1>
-          <p class="lead">
-            Se você vive cansada, ansiosa e sobrecarregada — especialmente na maternidade — a terapia pode te ajudar a desacelerar e viver com mais leveza.
-            <span>A ansiedade não precisa controlar sua vida.</span>
-          </p>
+          <!-- eyebrow "Psicologia clínica" removido -->
+          <h1>Você sente que precisa dar conta de tudo, mas está esgotada por dentro?</h1>
+          <p class="lead">Eu ajudo mulheres ansiosas e sobrecarregadas a desacelerar, lidar com a culpa e se reencontrar — sem precisar carregar tudo sozinha.</p>
           <div class="hero-actions">
-            <!-- Sugestão 4: linguagem humanizada -->
             <a class="btn btn-main" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero parar de me sentir assim</a>
           </div>
         </div>
@@ -244,41 +232,20 @@
       </div>
     </section>
 
-    <!-- SOBRE -->
-    <section id="sobre">
-      <div class="container split">
-        <!-- No mobile: foto fica depois do texto via CSS order -->
-        <div class="about-photo-wrap">
-          <img src="sobre.png" alt="Foto profissional de Gabriella Trevizan, psicóloga clínica" loading="lazy" />
-        </div>
-        <div class="about-card about-text">
-          <h2>Quem é Gabriella Trevizan?</h2>
-          <p>Sou psicóloga formada pela Universidade Tuiuti do Paraná e atuo com a abordagem da Terapia Cognitivo-Comportamental (TCC). Atualmente, estou em especialização em Práticas Baseadas em Evidências, buscando oferecer um atendimento cada vez mais ético, atualizado e eficaz.</p>
-          <p>A Terapia Cognitivo-Comportamental (TCC) é uma abordagem que ajuda você a entender como seus pensamentos influenciam suas emoções e comportamentos. A partir disso, trabalhamos juntas formas mais saudáveis e realistas de lidar com o que você sente no dia a dia.</p>
-          <p>Atendo mulheres que se sentem ansiosas, sobrecarregadas e mentalmente exaustas — que muitas vezes precisam dar conta de tudo, mas se sentem esgotadas por dentro.</p>
-          <p>Acredito que a terapia é um espaço seguro e acolhedor, onde você pode se reconectar consigo mesma, sem julgamentos, respeitando seu tempo e sua história.</p>
-          <p>Se você sente que precisa de ajuda, estou aqui para caminhar com você.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ESPECIALIDADES -->
+    <!-- ESPECIALIDADES — 2ª seção; eyebrow "Especialidades" removido, id mantido para atalho do nav -->
     <section id="especialidades" class="soft">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Especialidades</span>
-          <h2>Como posso te ajudar</h2>
-          <p>Atendimento psicológico para mulheres que vivem ansiedade, autocobrança, sobrecarga e desafios emocionais.</p>
+          <h2>Focos do atendimento</h2>
+          <p>Cuidar de tudo e de todos pode ser exaustivo — principalmente quando ninguém vê o que você sente por dentro.<br>Se você anda cansada, ansiosa e sobrecarregada, a terapia pode ser um espaço seguro para se acolher, se entender e encontrar um caminho mais leve.</p>
         </div>
         <div class="cards">
-          <article class="card"><h3><span class="bullet"></span>Ansiedade</h3><p class="question">Sua mente não para?</p><p>Pensamentos acelerados, preocupação constante e dificuldade de relaxar, mesmo quando está tudo "bem".</p></article>
-          <article class="card"><h3><span class="bullet"></span>Autocobrança e culpa</h3><p class="question">Você sente que nunca faz o suficiente?</p><p>Se cobra o tempo todo, se culpa com frequência e sente dificuldade de se acolher.</p></article>
-          <article class="card"><h3><span class="bullet"></span>Maternidade</h3><p class="question">A maternidade tem sido mais pesada do que você imaginava?</p><p>Cansaço, sobrecarga, culpa e a sensação de precisar dar conta de tudo.</p></article>
-          <article class="card"><h3><span class="bullet"></span>Autoestima</h3><p class="question">Você se coloca sempre em segundo plano?</p><p>Dificuldade de se priorizar, impor limites e reconhecer seu próprio valor.</p></article>
-          <article class="card"><h3><span class="bullet"></span>Sobrecarga emocional</h3><p class="question">Você se sente constantemente esgotada?</p><p>Mesmo fazendo tudo, parece que nunca é suficiente e o cansaço só aumenta.</p></article>
+          <article class="card"><h3>Ansiedade</h3><p class="question">Sua mente não para?</p><p>Pensamentos acelerados, preocupação constante e dificuldade de relaxar, mesmo quando está tudo "bem".</p></article>
+          <article class="card"><h3>Autocobrança e culpa</h3><p class="question">Você sente que nunca faz o suficiente?</p><p>Se cobra o tempo todo, se culpa com frequência e sente dificuldade de se acolher.</p></article>
+          <article class="card"><h3>Maternidade</h3><p class="question">A maternidade tem sido mais pesada do que você imaginava?</p><p>Cansaço, sobrecarga, culpa e a sensação de precisar dar conta de tudo.</p></article>
+          <article class="card"><h3>Autoestima</h3><p class="question">Você se coloca sempre em segundo plano?</p><p>Dificuldade de se priorizar, impor limites e reconhecer seu próprio valor.</p></article>
+          <article class="card"><h3>Sobrecarga emocional</h3><p class="question">Você se sente constantemente esgotada?</p><p>Mesmo fazendo tudo, parece que nunca é suficiente e o cansaço só aumenta.</p></article>
         </div>
-
-        <!-- Mini-CTA pós especialidades -->
         <div class="identify-cta">
           <p>Se algum desses pontos falou com você,<br><strong>você não precisa continuar carregando isso sozinha.</strong></p>
           <p class="identify-sub">A terapia é um espaço só seu — para respirar, se entender e viver com mais leveza.</p>
@@ -291,8 +258,8 @@
     <section id="funciona">
       <div class="container">
         <div class="section-head">
-          <span class="eyebrow">Como funciona o atendimento</span>
-          <h2>Um processo acolhedor e transformador</h2>
+          <span class="eyebrow-destaque">Como funciona o atendimento</span>
+          <h2 class="h2-nowrap">Um processo acolhedor e transformador</h2>
           <p>Do primeiro contato ao acompanhamento terapêutico, tudo é conduzido com sigilo, respeito e clareza.</p>
         </div>
         <div class="process-grid">
@@ -301,9 +268,60 @@
           <div class="step"><h3>Consulta</h3><p>Um espaço de escuta acolhedora para compreender suas questões e sentimentos.</p></div>
           <div class="step"><h3>Caminho terapêutico</h3><p>Com acolhimento e direção, seguimos construindo novas formas de viver.</p></div>
         </div>
+        <!-- Botão WhatsApp entre os passos e a caixa de formato -->
+        <div class="process-cta-wrap">
+          <a class="btn btn-whats-inline" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20agendar%20minha%20consulta.">
+            <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.83 3.03 16c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75A12.9 12.9 0 0 0 16.04 29C23.21 29 29 23.17 29 16S23.21 3 16.04 3Zm0 23.76c-2.03 0-4.02-.54-5.76-1.56l-.41-.24-3.96 1.04 1.06-3.86-.27-.43A10.69 10.69 0 0 1 5.27 16c0-5.94 4.83-10.77 10.77-10.77 5.91 0 10.72 4.83 10.72 10.77s-4.81 10.76-10.72 10.76Zm5.9-8.06c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.72.16-.21.32-.83 1.05-1.02 1.27-.19.21-.37.24-.69.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.15-.15.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.15 3.09 1.31 3.3c.16.21 2.27 3.46 5.5 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>
+            Agendar minha consulta agora
+          </a>
+        </div>
         <div class="format-box">
           <strong>Atendimento presencial e online</strong>
           <p>Você escolhe o formato que faz mais sentido para sua rotina. O atendimento online é realizado por videochamada, com a mesma qualidade, acolhimento e sigilo profissional.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="container split">
+        <div class="about-photo-wrap">
+          <img src="sobre.png" alt="Foto profissional de Gabriella Trevizan, psicóloga clínica" loading="lazy" />
+        </div>
+        <div class="about-card about-text">
+          <h2>Quem é Gabriella Trevizan?</h2>
+          <p>Sou psicóloga formada pela Universidade Tuiuti do Paraná, atuo com a Terapia Cognitivo-Comportamental (TCC) e estou em especialização em Práticas Baseadas em Evidências pelo In PBE, buscando um atendimento cada vez mais ético e eficaz.</p>
+          <p>Além da minha formação, também sou mãe — e sei, na prática, como a maternidade pode intensificar a ansiedade, a sobrecarga e a cobrança de dar conta de tudo.</p>
+          <p>Atendo mulheres que se sentem ansiosas, cansadas e mentalmente exaustas, ajudando a entender seus pensamentos e lidar com as emoções de forma mais leve.</p>
+          <p>Acredito na terapia como um espaço seguro, acolhedor e sem julgamentos, onde você pode se reconectar consigo mesma, no seu tempo.</p>
+          <p>Se você sente que precisa de ajuda, estou aqui para caminhar com você.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFÍCIOS — nova seção antes de depoimentos e FAQ -->
+    <section id="beneficios" class="beneficios">
+      <div class="container">
+        <div class="beneficios-inner">
+          <h2>Na terapia, você pode:</h2>
+          <p class="beneficios-intro">Um espaço criado para você — para respirar, se entender e encontrar um caminho mais leve.</p>
+          <ul class="beneficios-list">
+            <li>desacelerar sua mente</li>
+            <li>lidar melhor com a ansiedade</li>
+            <li>diminuir a culpa constante</li>
+            <li>aprender a se priorizar sem se sentir egoísta</li>
+            <li>se reconectar com quem você é além das responsabilidades</li>
+          </ul>
+          <hr class="beneficios-sep" />
+          <div class="beneficios-emocional">
+            <p>Você já carregou tudo isso sozinha por tempo demais.</p>
+            <p>Talvez ninguém tenha percebido o quanto você está cansada por dentro… o quanto tem sido difícil dar conta de tudo.</p>
+            <p>Mas você não precisa continuar assim.</p>
+            <p>Eu estou aqui para te ajudar.</p>
+          </div>
+          <a class="btn btn-beneficios" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20minha%20terapia.">
+            Quero começar a minha terapia
+          </a>
         </div>
       </div>
     </section>
@@ -343,7 +361,6 @@
         <div class="faq">
           <details open><summary>O atendimento é presencial ou online?</summary><p>Os dois. O atendimento pode ser realizado presencialmente em Curitiba/PR ou online por videochamada para todo o mundo.</p></details>
           <details><summary>Como sei se preciso fazer terapia?</summary><p>Se você sente ansiedade, culpa, autocobrança, tristeza recorrente, sobrecarga ou dificuldade de lidar com relações e limites, a terapia pode ajudar.</p></details>
-          <!-- Sugestão 6: novas perguntas -->
           <details><summary>Não tenho tempo — como a terapia cabe na minha rotina?</summary><p>Uma sessão semanal de 50 minutos. Online, sem deslocamento, no horário que funcionar para você. A maioria das pacientes descobre que sempre teve esse tempo — mas nunca havia se colocado como prioridade. Começar a terapia é, em si, um ato de se priorizar.</p></details>
           <details><summary>Preciso estar em crise para começar a terapia?</summary><p>Não. A terapia é mais eficaz exatamente antes da crise — quando você ainda tem energia para trabalhar os padrões que te esgotam. Se você sente que algo não está bem, isso já é motivo suficiente. Você não precisa esperar piorar para começar a se cuidar.</p></details>
           <details><summary>Quanto tempo dura uma sessão?</summary><p>As sessões geralmente têm duração aproximada de 50 minutos.</p></details>
@@ -361,7 +378,6 @@
             <h2>Vamos dar o primeiro passo juntas?</h2>
             <p>Agende sua consulta e comece a transformar sua história.</p>
           </div>
-          <!-- Sugestão 4 + 5: botão humanizado e urgência -->
           <div class="cta-action">
             <a class="btn btn-white" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero dar o primeiro passo</a>
             <p class="cta-urgency">Você não precisa esperar piorar para começar a se cuidar.</p>
@@ -392,13 +408,11 @@
   <script>
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('main-menu');
-
     toggle.addEventListener('click', () => {
       const isOpen = menu.classList.toggle('open');
       toggle.classList.toggle('open', isOpen);
       toggle.setAttribute('aria-expanded', isOpen);
     });
-
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         menu.classList.remove('open');
