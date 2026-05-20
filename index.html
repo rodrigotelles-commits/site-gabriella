@@ -135,6 +135,50 @@
     .float-insta{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);box-shadow:0 12px 34px rgba(220,39,67,.3)}
     .float-insta:hover{box-shadow:0 16px 40px rgba(220,39,67,.42)}
 
+    /* ═══ ANIMAÇÕES ═══ */
+    @keyframes blob-drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(22px,-28px) scale(1.06)}66%{transform:translate(-18px,18px) scale(.96)}}
+    @keyframes float-gentle{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+    @keyframes hero-enter{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes pulse-cta{0%,100%{box-shadow:0 14px 32px rgba(111,90,135,.22)}50%{box-shadow:0 18px 54px rgba(111,90,135,.52),0 0 0 10px rgba(143,122,168,.10)}}
+    @keyframes pulse-whats{0%,100%{box-shadow:0 10px 28px rgba(22,163,74,.28)}50%{box-shadow:0 14px 50px rgba(22,163,74,.54),0 0 0 10px rgba(22,163,74,.08)}}
+
+    /* Hero blobs */
+    .hero{position:relative}
+    .hero-blob{position:absolute;border-radius:50%;filter:blur(72px);pointer-events:none;z-index:0;animation:blob-drift var(--dur,11s) ease-in-out infinite}
+    .hero-blob-1{width:420px;height:420px;background:rgba(143,122,168,.26);top:-130px;right:-110px;--dur:13s}
+    .hero-blob-2{width:300px;height:300px;background:rgba(111,90,135,.20);bottom:-70px;right:80px;--dur:10s;animation-delay:-4s}
+    .hero-blob-3{width:220px;height:220px;background:rgba(228,216,238,.48);top:45%;left:-70px;--dur:15s;animation-delay:-7s}
+    .hero-grid{position:relative;z-index:1}
+
+    /* Entrada sequencial do hero */
+    .hero-copy h1{animation:hero-enter .85s cubic-bezier(.22,1,.36,1) both .1s}
+    .hero-copy .lead{animation:hero-enter .85s cubic-bezier(.22,1,.36,1) both .32s}
+    .hero-copy .hero-actions{animation:hero-enter .85s cubic-bezier(.22,1,.36,1) both .54s}
+
+    /* Pulso nos botões CTA */
+    .btn-main{animation:pulse-cta 3.4s ease-in-out infinite}
+    .btn-main:hover{animation-play-state:paused}
+    .btn-whats-inline{animation:pulse-whats 3.4s ease-in-out infinite}
+    .btn-whats-inline:hover{animation-play-state:paused}
+
+    /* Foto flutuante no Sobre */
+    .about-photo-wrap img{animation:float-gentle 7s ease-in-out infinite}
+
+    /* Dots decorativos no Benefícios */
+    .beneficios{position:relative;overflow:hidden}
+    .bene-dot{position:absolute;border-radius:50%;background:rgba(196,168,224,.07);pointer-events:none;animation:blob-drift var(--dur,13s) ease-in-out infinite}
+    .bene-dot-1{width:380px;height:380px;top:-100px;right:-100px;--dur:14s}
+    .bene-dot-2{width:260px;height:260px;bottom:-80px;left:-60px;--dur:11s;animation-delay:-5s}
+    .bene-dot-3{width:180px;height:180px;top:50%;right:20%;--dur:9s;animation-delay:-2s}
+
+    /* ─── Scroll Reveal ─── */
+    .reveal,.reveal-left,.reveal-scale{will-change:opacity,transform}
+    .reveal{opacity:0;transform:translateY(40px);transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1)}
+    .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .78s cubic-bezier(.22,1,.36,1),transform .78s cubic-bezier(.22,1,.36,1)}
+    .reveal-scale{opacity:0;transform:scale(.92);transition:opacity .68s ease,transform .68s ease}
+    .reveal.visible,.reveal-left.visible,.reveal-scale.visible{opacity:1;transform:none}
+    .d1{transition-delay:.06s}.d2{transition-delay:.13s}.d3{transition-delay:.20s}.d4{transition-delay:.28s}.d5{transition-delay:.36s}
+
     @media(max-width:1100px){.menu{gap:16px;font-size:.8rem}.brand{min-width:170px}.btn-nav{padding:12px 16px;font-size:.82rem}}
 
     @media(max-width:900px){
@@ -176,6 +220,13 @@
       .identify-cta{padding:28px 20px}
       .beneficios-list{gap:10px}
       .btn-beneficios{padding:16px 26px;font-size:.98rem}
+      /* Mobile: blobs menores mas ainda visíveis */
+      .hero-blob-1{width:260px;height:260px;filter:blur(50px)}
+      .hero-blob-2{width:180px;height:180px;filter:blur(40px)}
+      .hero-blob-3{width:140px;height:140px;filter:blur(36px)}
+      /* Amplifica o reveal no mobile */
+      .reveal{transform:translateY(28px)}
+      .reveal-left{transform:translateX(-28px)}
     }
   </style>
 </head>
@@ -219,6 +270,9 @@
 
     <!-- HERO -->
     <section class="hero">
+      <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+      <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <!-- eyebrow "Psicologia clínica" removido -->
@@ -235,18 +289,18 @@
     <!-- ESPECIALIDADES — 2ª seção; eyebrow "Especialidades" removido, id mantido para atalho do nav -->
     <section id="especialidades" class="soft">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <h2>Focos do atendimento</h2>
           <p>Cuidar de tudo e de todos pode ser exaustivo — principalmente quando ninguém vê o que você sente por dentro.<br>Se você anda cansada, ansiosa e sobrecarregada, a terapia pode ser um espaço seguro para se acolher, se entender e encontrar um caminho mais leve.</p>
         </div>
         <div class="cards">
-          <article class="card"><h3>Ansiedade</h3><p class="question">Sua mente não para?</p><p>Pensamentos acelerados, preocupação constante e dificuldade de relaxar, mesmo quando está tudo "bem".</p></article>
-          <article class="card"><h3>Autocobrança e culpa</h3><p class="question">Você sente que nunca faz o suficiente?</p><p>Se cobra o tempo todo, se culpa com frequência e sente dificuldade de se acolher.</p></article>
-          <article class="card"><h3>Maternidade</h3><p class="question">A maternidade tem sido mais pesada do que você imaginava?</p><p>Cansaço, sobrecarga, culpa e a sensação de precisar dar conta de tudo.</p></article>
-          <article class="card"><h3>Autoestima</h3><p class="question">Você se coloca sempre em segundo plano?</p><p>Dificuldade de se priorizar, impor limites e reconhecer seu próprio valor.</p></article>
-          <article class="card"><h3>Sobrecarga emocional</h3><p class="question">Você se sente constantemente esgotada?</p><p>Mesmo fazendo tudo, parece que nunca é suficiente e o cansaço só aumenta.</p></article>
+          <article class="card reveal d1"><h3>Ansiedade</h3><p class="question">Sua mente não para?</p><p>Pensamentos acelerados, preocupação constante e dificuldade de relaxar, mesmo quando está tudo "bem".</p></article>
+          <article class="card reveal d2"><h3>Autocobrança e culpa</h3><p class="question">Você sente que nunca faz o suficiente?</p><p>Se cobra o tempo todo, se culpa com frequência e sente dificuldade de se acolher.</p></article>
+          <article class="card reveal d3"><h3>Maternidade</h3><p class="question">A maternidade tem sido mais pesada do que você imaginava?</p><p>Cansaço, sobrecarga, culpa e a sensação de precisar dar conta de tudo.</p></article>
+          <article class="card reveal d4"><h3>Autoestima</h3><p class="question">Você se coloca sempre em segundo plano?</p><p>Dificuldade de se priorizar, impor limites e reconhecer seu próprio valor.</p></article>
+          <article class="card reveal d5"><h3>Sobrecarga emocional</h3><p class="question">Você se sente constantemente esgotada?</p><p>Mesmo fazendo tudo, parece que nunca é suficiente e o cansaço só aumenta.</p></article>
         </div>
-        <div class="identify-cta">
+        <div class="identify-cta reveal">
           <p>Se algum desses pontos falou com você,<br><strong>você não precisa continuar carregando isso sozinha.</strong></p>
           <p class="identify-sub">A terapia é um espaço só seu — para respirar, se entender e viver com mais leveza.</p>
           <a class="btn btn-identify" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Me%20identifiquei%20com%20o%20que%20li%20no%20seu%20site%20e%20gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero me sentir melhor →</a>
@@ -257,25 +311,25 @@
     <!-- COMO FUNCIONA -->
     <section id="funciona">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow-destaque">Como funciona o atendimento</span>
           <h2 class="h2-nowrap">Um processo acolhedor e transformador</h2>
           <p>Do primeiro contato ao acompanhamento terapêutico, tudo é conduzido com sigilo, respeito e clareza.</p>
         </div>
         <div class="process-grid">
-          <div class="step"><h3>Primeiro contato</h3><p>Você envia uma mensagem pelo WhatsApp e conta, de forma breve, o que está vivendo.</p></div>
-          <div class="step"><h3>Agendamento</h3><p>Definimos juntas o melhor dia, horário e formato: presencial ou online.</p></div>
-          <div class="step"><h3>Consulta</h3><p>Um espaço de escuta acolhedora para compreender suas questões e sentimentos.</p></div>
-          <div class="step"><h3>Caminho terapêutico</h3><p>Com acolhimento e direção, seguimos construindo novas formas de viver.</p></div>
+          <div class="step reveal d1"><h3>Primeiro contato</h3><p>Você envia uma mensagem pelo WhatsApp e conta, de forma breve, o que está vivendo.</p></div>
+          <div class="step reveal d2"><h3>Agendamento</h3><p>Definimos juntas o melhor dia, horário e formato: presencial ou online.</p></div>
+          <div class="step reveal d3"><h3>Consulta</h3><p>Um espaço de escuta acolhedora para compreender suas questões e sentimentos.</p></div>
+          <div class="step reveal d4"><h3>Caminho terapêutico</h3><p>Com acolhimento e direção, seguimos construindo novas formas de viver.</p></div>
         </div>
         <!-- Botão WhatsApp entre os passos e a caixa de formato -->
-        <div class="process-cta-wrap">
+        <div class="process-cta-wrap reveal">
           <a class="btn btn-whats-inline" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20agendar%20minha%20consulta.">
             <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.83 3.03 16c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75A12.9 12.9 0 0 0 16.04 29C23.21 29 29 23.17 29 16S23.21 3 16.04 3Zm0 23.76c-2.03 0-4.02-.54-5.76-1.56l-.41-.24-3.96 1.04 1.06-3.86-.27-.43A10.69 10.69 0 0 1 5.27 16c0-5.94 4.83-10.77 10.77-10.77 5.91 0 10.72 4.83 10.72 10.77s-4.81 10.76-10.72 10.76Zm5.9-8.06c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.72.16-.21.32-.83 1.05-1.02 1.27-.19.21-.37.24-.69.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.15-.15.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.15 3.09 1.31 3.3c.16.21 2.27 3.46 5.5 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>
             Agendar minha consulta agora
           </a>
         </div>
-        <div class="format-box">
+        <div class="format-box reveal">
           <strong>Atendimento presencial e online</strong>
           <p>Você escolhe o formato que faz mais sentido para sua rotina. O atendimento online é realizado por videochamada, com a mesma qualidade, acolhimento e sigilo profissional.</p>
         </div>
@@ -285,10 +339,10 @@
     <!-- SOBRE -->
     <section id="sobre">
       <div class="container split">
-        <div class="about-photo-wrap">
+        <div class="about-photo-wrap reveal-left">
           <img src="sobre.png" alt="Foto profissional de Gabriella Trevizan, psicóloga clínica" loading="lazy" />
         </div>
-        <div class="about-card about-text">
+        <div class="about-card about-text reveal">
           <h2>Quem é Gabriella Trevizan?</h2>
           <p>Sou psicóloga formada pela Universidade Tuiuti do Paraná, atuo com a Terapia Cognitivo-Comportamental (TCC) e estou em especialização em Práticas Baseadas em Evidências pelo In PBE, buscando um atendimento cada vez mais ético e eficaz.</p>
           <p>Além da minha formação, também sou mãe — e sei, na prática, como a maternidade pode intensificar a ansiedade, a sobrecarga e a cobrança de dar conta de tudo.</p>
@@ -301,8 +355,11 @@
 
     <!-- BENEFÍCIOS — nova seção antes de depoimentos e FAQ -->
     <section id="beneficios" class="beneficios">
+      <div class="bene-dot bene-dot-1" aria-hidden="true"></div>
+      <div class="bene-dot bene-dot-2" aria-hidden="true"></div>
+      <div class="bene-dot bene-dot-3" aria-hidden="true"></div>
       <div class="container">
-        <div class="beneficios-inner">
+        <div class="beneficios-inner reveal">
           <h2>Na terapia, você pode:</h2>
           <p class="beneficios-intro">Um espaço criado para você — para respirar, se entender e encontrar um caminho mais leve.</p>
           <ul class="beneficios-list">
@@ -329,21 +386,21 @@
     <!-- DEPOIMENTOS -->
     <section id="depoimentos" class="soft">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow">Depoimentos</span>
           <h2>O que dizem as pacientes</h2>
           <p>Relatos reais compartilhados com autorização, preservando a identidade de cada pessoa.</p>
         </div>
         <div class="testimonials">
-          <div class="testimonial">
+          <div class="testimonial reveal d1">
             <p class="testimonial-text">"Eu achava que não tinha tempo para terapia. Na verdade, eu não tinha energia para mais nada — e estava descontando isso em tudo. Depois de alguns meses, aprendi a existir na minha própria rotina. Não me sinto mais uma estranha dentro da minha vida."</p>
             <span class="testimonial-author">L., 31 anos</span>
           </div>
-          <div class="testimonial">
+          <div class="testimonial reveal d2">
             <p class="testimonial-text">"Cheguei achando que o problema era falta de organização. A Gabriella me ajudou a entender que era culpa e autocobrança que me esgotavam. Hoje consigo descansar sem me sentir culpada por isso — e isso mudou tudo."</p>
             <span class="testimonial-author">C., 36 anos, mãe de dois filhos</span>
           </div>
-          <div class="testimonial">
+          <div class="testimonial reveal d3">
             <p class="testimonial-text">"Fui procurar ajuda quando senti que não conseguia mais. A Gabriella tem uma escuta muito acolhedora, sem julgamentos. Me surpreendi com o quanto uma sessão por semana pode mudar a forma como você se vê e se trata."</p>
             <span class="testimonial-author">M., 28 anos</span>
           </div>
@@ -354,18 +411,18 @@
     <!-- FAQ -->
     <section id="faq">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <span class="eyebrow">Perguntas frequentes</span>
           <h2>Dúvidas comuns antes de começar</h2>
         </div>
         <div class="faq">
-          <details open><summary>O atendimento é presencial ou online?</summary><p>Os dois. O atendimento pode ser realizado presencialmente em Curitiba/PR ou online por videochamada para todo o mundo.</p></details>
-          <details><summary>Como sei se preciso fazer terapia?</summary><p>Se você sente ansiedade, culpa, autocobrança, tristeza recorrente, sobrecarga ou dificuldade de lidar com relações e limites, a terapia pode ajudar.</p></details>
-          <details><summary>Não tenho tempo — como a terapia cabe na minha rotina?</summary><p>Uma sessão semanal de 50 minutos. Online, sem deslocamento, no horário que funcionar para você. A maioria das pacientes descobre que sempre teve esse tempo — mas nunca havia se colocado como prioridade. Começar a terapia é, em si, um ato de se priorizar.</p></details>
-          <details><summary>Preciso estar em crise para começar a terapia?</summary><p>Não. A terapia é mais eficaz exatamente antes da crise — quando você ainda tem energia para trabalhar os padrões que te esgotam. Se você sente que algo não está bem, isso já é motivo suficiente. Você não precisa esperar piorar para começar a se cuidar.</p></details>
-          <details><summary>Quanto tempo dura uma sessão?</summary><p>As sessões geralmente têm duração aproximada de 50 minutos.</p></details>
-          <details><summary>Quanto tempo dura o processo terapêutico?</summary><p>Não existe um prazo único. O tempo depende das demandas, objetivos e evolução de cada pessoa.</p></details>
-          <details><summary>Como faço para agendar?</summary><p>Você pode entrar em contato pelo WhatsApp para verificar disponibilidade de horários e tirar dúvidas iniciais.</p></details>
+          <details class="reveal d1" open><summary>O atendimento é presencial ou online?</summary><p>Os dois. O atendimento pode ser realizado presencialmente em Curitiba/PR ou online por videochamada para todo o mundo.</p></details>
+          <details class="reveal d2"><summary>Como sei se preciso fazer terapia?</summary><p>Se você sente ansiedade, culpa, autocobrança, tristeza recorrente, sobrecarga ou dificuldade de lidar com relações e limites, a terapia pode ajudar.</p></details>
+          <details class="reveal d3"><summary>Não tenho tempo — como a terapia cabe na minha rotina?</summary><p>Uma sessão semanal de 50 minutos. Online, sem deslocamento, no horário que funcionar para você. A maioria das pacientes descobre que sempre teve esse tempo — mas nunca havia se colocado como prioridade. Começar a terapia é, em si, um ato de se priorizar.</p></details>
+          <details class="reveal d4"><summary>Preciso estar em crise para começar a terapia?</summary><p>Não. A terapia é mais eficaz exatamente antes da crise — quando você ainda tem energia para trabalhar os padrões que te esgotam. Se você sente que algo não está bem, isso já é motivo suficiente. Você não precisa esperar piorar para começar a se cuidar.</p></details>
+          <details class="reveal d5"><summary>Quanto tempo dura uma sessão?</summary><p>As sessões geralmente têm duração aproximada de 50 minutos.</p></details>
+          <details class="reveal"><summary>Quanto tempo dura o processo terapêutico?</summary><p>Não existe um prazo único. O tempo depende das demandas, objetivos e evolução de cada pessoa.</p></details>
+          <details class="reveal"><summary>Como faço para agendar?</summary><p>Você pode entrar em contato pelo WhatsApp para verificar disponibilidade de horários e tirar dúvidas iniciais.</p></details>
         </div>
       </div>
     </section>
@@ -373,7 +430,7 @@
     <!-- CTA / CONTATO -->
     <section id="contato" class="soft">
       <div class="container">
-        <div class="cta-bar">
+        <div class="cta-bar reveal-scale">
           <div>
             <h2>Vamos dar o primeiro passo juntas?</h2>
             <p>Agende sua consulta e comece a transformar sua história.</p>
@@ -406,6 +463,7 @@
   </footer>
 
   <script>
+    // ── Menu hambúrguer ──
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('main-menu');
     toggle.addEventListener('click', () => {
@@ -420,6 +478,22 @@
         toggle.setAttribute('aria-expanded', 'false');
       });
     });
+
+    // ── Scroll Reveal (Intersection Observer) ──
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target); // revela só uma vez
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -24px 0px'
+    });
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-scale')
+      .forEach(el => revealObserver.observe(el));
   </script>
 
 </body>
