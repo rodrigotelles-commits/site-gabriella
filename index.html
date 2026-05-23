@@ -473,27 +473,33 @@
             s.src="https://w.behold.so/widget.js";d.head.append(s);
           })();
 
-          // Remove "Made with Behold" branding
-          // Structure: behold-widget > #shadow-root > behold-grid > #shadow-root > behold-branding
+          // Remove "Made with Behold" — percorre todos os shadow roots recursivamente
           const hideBeholdBranding = () => {
+            const traverse = (root) => {
+              let found = false;
+              root.querySelectorAll('*').forEach(el => {
+                const tag = el.tagName.toLowerCase();
+                if (tag === 'behold-branding') {
+                  el.style.setProperty('display', 'none', 'important');
+                  found = true;
+                }
+                if (tag === 'a' && el.getAttribute('href')?.includes('behold.so')) {
+                  el.style.setProperty('display', 'none', 'important');
+                  found = true;
+                }
+                if (el.shadowRoot) found = traverse(el.shadowRoot) || found;
+              });
+              return found;
+            };
             const widget = document.querySelector('behold-widget');
-            if (!widget?.shadowRoot) return false;
-            const grid = widget.shadowRoot.querySelector('behold-grid');
-            if (!grid?.shadowRoot) return false;
-            if (!grid.shadowRoot.querySelector('#hide-behold')) {
-              const style = document.createElement('style');
-              style.id = 'hide-behold';
-              style.textContent = 'behold-branding, a.branding { display:none!important }';
-              grid.shadowRoot.appendChild(style);
-            }
-            return true;
+            return widget?.shadowRoot ? traverse(widget.shadowRoot) : false;
           };
 
-          const observer = new MutationObserver(() => {
-            if (hideBeholdBranding()) observer.disconnect();
-          });
-          observer.observe(document.body, { childList: true, subtree: true });
-          [500, 1500, 3000, 5000].forEach(ms => setTimeout(hideBeholdBranding, ms));
+          // Tenta a cada 300ms até encontrar (máx. 15s)
+          const bInterval = setInterval(() => {
+            if (hideBeholdBranding()) clearInterval(bInterval);
+          }, 300);
+          setTimeout(() => clearInterval(bInterval), 15000);
         </script>
       </div>
     </div>
