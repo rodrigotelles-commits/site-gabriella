@@ -99,8 +99,17 @@
     .beneficios-emocional p{margin:0 0 12px}
     .beneficios-emocional p:last-child{margin:0;font-weight:700;color:white;font-size:1.15rem}
 
-    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1060px;margin:0 auto}
-    .testimonial{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:36px 28px 28px;position:relative;display:flex;flex-direction:column;justify-content:space-between}
+    .testimonials-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;max-width:1060px;margin:0 auto}
+    .testimonials-left .eyebrow{display:block;margin-bottom:10px}
+    .testimonials-left h2{font-size:clamp(1.8rem,3vw,3.2rem);margin:0 0 12px}
+    .testimonials-subtitle{color:var(--muted);font-size:.92rem;margin:0 0 28px;display:flex;align-items:center;gap:6px}
+    .testimonials-dots{display:flex;gap:8px}
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--line);cursor:pointer;border:none;padding:0;transition:.35s ease;flex-shrink:0}
+    .dot.active{background:var(--lilac-dark);width:28px}
+    .testimonials-right{position:relative}
+    .testimonial{display:none;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:36px 28px 28px;position:relative;flex-direction:column;justify-content:space-between}
+    .testimonial.active{display:flex;animation:t-in .45s cubic-bezier(.22,1,.36,1) both}
+    @keyframes t-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
     .testimonial::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:6rem;line-height:.8;color:var(--lilac);opacity:.25;position:absolute;top:16px;left:22px;pointer-events:none;user-select:none}
     .testimonial-text{color:var(--text);font-size:.98rem;line-height:1.75;margin:0 0 22px;font-style:italic;padding-top:24px}
     .testimonial-author{font-weight:800;font-size:.8rem;color:var(--lilac-dark);text-transform:uppercase;letter-spacing:.12em}
@@ -208,7 +217,7 @@
       .cards{grid-template-columns:1fr}
       .cards > .card:last-child:nth-child(odd){grid-column:auto;max-width:100%;margin-inline:0}
       .identify-cta{padding:30px 24px}
-      .testimonials{grid-template-columns:1fr}
+      .testimonials-wrap{grid-template-columns:1fr}
       .process-grid{grid-template-columns:repeat(2,1fr)}
       .cta-bar{grid-template-columns:1fr;text-align:center}
       .cta-action{align-items:center}
@@ -300,7 +309,6 @@
       <div class="container">
         <div class="section-head reveal">
           <h2>Focos do atendimento</h2>
-          <p>Cuidar de tudo e de todos pode ser exaustivo — principalmente quando ninguém vê o que você sente por dentro.<br>Se você anda cansada, ansiosa e sobrecarregada, a terapia pode ser um espaço seguro para se acolher, se entender e encontrar um caminho mais leve.</p>
         </div>
         <div class="cards">
           <article class="card reveal d1"><h3>Ansiedade</h3><p class="question">Sua mente não para?</p><p>Pensamentos acelerados, preocupação constante e dificuldade de relaxar, mesmo quando está tudo "bem".</p></article>
@@ -370,7 +378,6 @@
       <div class="container">
         <div class="beneficios-inner reveal">
           <h2>Na terapia, você pode:</h2>
-          <p class="beneficios-intro">Um espaço criado para você — para respirar, se entender e encontrar um caminho mais leve.</p>
           <ul class="beneficios-list">
             <li>desacelerar sua mente</li>
             <li>lidar melhor com a ansiedade</li>
@@ -395,23 +402,30 @@
     <!-- DEPOIMENTOS -->
     <section id="depoimentos" class="soft">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Depoimentos</span>
-          <h2>O que dizem as pacientes</h2>
-          <p>Relatos reais compartilhados com autorização, preservando a identidade de cada pessoa.</p>
-        </div>
-        <div class="testimonials">
-          <div class="testimonial reveal d1">
-            <p class="testimonial-text">"Eu achava que não tinha tempo para terapia. Na verdade, eu não tinha energia para mais nada — e estava descontando isso em tudo. Depois de alguns meses, aprendi a existir na minha própria rotina. Não me sinto mais uma estranha dentro da minha vida."</p>
-            <span class="testimonial-author">L., 31 anos</span>
+        <div class="testimonials-wrap">
+          <div class="testimonials-left reveal-left">
+            <span class="eyebrow">Depoimentos</span>
+            <h2>O que dizem as pacientes</h2>
+            <p class="testimonials-subtitle">✦ Histórias reais de quem transformou a vida com terapia</p>
+            <div class="testimonials-dots">
+              <button class="dot active" data-index="0" aria-label="Depoimento 1"></button>
+              <button class="dot" data-index="1" aria-label="Depoimento 2"></button>
+              <button class="dot" data-index="2" aria-label="Depoimento 3"></button>
+            </div>
           </div>
-          <div class="testimonial reveal d2">
-            <p class="testimonial-text">"Cheguei achando que o problema era falta de organização. A Gabriella me ajudou a entender que era culpa e autocobrança que me esgotavam. Hoje consigo descansar sem me sentir culpada por isso — e isso mudou tudo."</p>
-            <span class="testimonial-author">C., 36 anos, mãe de dois filhos</span>
-          </div>
-          <div class="testimonial reveal d3">
-            <p class="testimonial-text">"Fui procurar ajuda quando senti que não conseguia mais. A Gabriella tem uma escuta muito acolhedora, sem julgamentos. Me surpreendi com o quanto uma sessão por semana pode mudar a forma como você se vê e se trata."</p>
-            <span class="testimonial-author">M., 28 anos</span>
+          <div class="testimonials-right reveal">
+            <div class="testimonial active">
+              <p class="testimonial-text">"Eu achava que não tinha tempo para terapia. Na verdade, eu não tinha energia para mais nada — e estava descontando isso em tudo. Depois de alguns meses, aprendi a existir na minha própria rotina. Não me sinto mais uma estranha dentro da minha vida."</p>
+              <span class="testimonial-author">L., 31 anos</span>
+            </div>
+            <div class="testimonial">
+              <p class="testimonial-text">"Cheguei achando que o problema era falta de organização. A Gabriella me ajudou a entender que era culpa e autocobrança que me esgotavam. Hoje consigo descansar sem me sentir culpada por isso — e isso mudou tudo."</p>
+              <span class="testimonial-author">C., 36 anos, mãe de dois filhos</span>
+            </div>
+            <div class="testimonial">
+              <p class="testimonial-text">"Fui procurar ajuda quando senti que não conseguia mais. A Gabriella tem uma escuta muito acolhedora, sem julgamentos. Me surpreendi com o quanto uma sessão por semana pode mudar a forma como você se vê e se trata."</p>
+              <span class="testimonial-author">M., 28 anos</span>
+            </div>
           </div>
         </div>
       </div>
@@ -466,6 +480,17 @@
         </a>
       </div>
       <div class="reveal">
+        <script>
+          if (!customElements.get('behold-branding')) {
+            customElements.define('behold-branding', class extends HTMLElement {
+              connectedCallback() {
+                this.style.setProperty('display', 'none', 'important');
+                new MutationObserver(() => this.style.setProperty('display', 'none', 'important'))
+                  .observe(this, { childList: true, subtree: true, attributes: true });
+              }
+            });
+          }
+        </script>
         <behold-widget feed-id="uLtxV2kegiH4BD1KZScq"></behold-widget>
         <script>
           (() => {
@@ -554,7 +579,29 @@
 
     document.querySelectorAll('.reveal, .reveal-left, .reveal-scale')
       .forEach(el => revealObserver.observe(el));
-  </script>
+
+    // ── Carrossel de depoimentos ──
+    const slides = document.querySelectorAll('.testimonial');
+    const dots   = document.querySelectorAll('.dot');
+    let current  = 0;
+    let autoPlay;
+
+    const goTo = (idx) => {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (idx + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    };
+
+    dots.forEach(dot => dot.addEventListener('click', () => {
+      clearInterval(autoPlay);
+      goTo(parseInt(dot.dataset.index));
+      autoPlay = setInterval(() => goTo(current + 1), 5000);
+    }));
+
+    autoPlay = setInterval(() => goTo(current + 1), 5000);
+</script>
 
 </body>
 </html>
