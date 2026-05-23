@@ -106,6 +106,15 @@
     .testimonials-dots{display:flex;gap:8px}
     .dot{width:10px;height:10px;border-radius:999px;background:var(--line);cursor:pointer;border:none;padding:0;transition:.35s ease;flex-shrink:0}
     .dot.active{background:var(--lilac-dark);width:28px}
+    .whats-tag{display:inline-flex;align-items:center;gap:6px;background:#dcf8c6;color:#1a7a3f;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;margin-bottom:16px;width:fit-content}
+    .testimonial--img::before{display:none}
+    .whats-img-wrap{border-radius:12px;overflow:hidden;box-shadow:0 4px 22px rgba(0,0,0,.1);margin-bottom:18px}
+    .whats-img-wrap img{width:100%;display:block}
+
+    .invest-box{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:40px 44px;display:flex;align-items:center;justify-content:space-between;gap:36px;max-width:860px;margin:0 auto;box-shadow:var(--shadow)}
+    .invest-box h3{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--lilac-deep);margin:0 0 10px;letter-spacing:-.02em}
+    .invest-box p{color:var(--muted);margin:0;max-width:480px;font-size:1rem;line-height:1.7}
+    @media(max-width:700px){.invest-box{flex-direction:column;text-align:center;padding:30px 24px}.invest-box p{max-width:100%}}
     .testimonials-right{position:relative}
     .testimonial{display:none;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:36px 28px 28px;position:relative;flex-direction:column;justify-content:space-between}
     .testimonial.active{display:flex;animation:t-in .45s cubic-bezier(.22,1,.36,1) both}
@@ -293,9 +302,9 @@
       <div class="hero-blob hero-blob-3" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <!-- eyebrow "Psicologia clínica" removido -->
+          <span class="eyebrow">Psicóloga Clínica · Terapia Online e Presencial em Curitiba</span>
           <h1>Você sente que precisa dar conta de tudo, mas está esgotada por dentro?</h1>
-          <p class="lead">Eu ajudo mulheres ansiosas e sobrecarregadas a desacelerar, lidar com a culpa e se reencontrar — sem precisar carregar tudo sozinha.</p>
+          <p class="lead">Eu ajudo mulheres ansiosas e sobrecarregadas a desacelerar, lidar com a culpa e se reencontrar — sem precisar carregar tudo sozinhas. Como mãe, eu sei o quanto é desafiador lidar com a culpa materna, a sobrecarga e a sensação de precisar dar conta de tudo o tempo todo.</p>
           <div class="hero-actions">
             <a class="btn btn-main" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20come%C3%A7ar%20a%20terapia.">Quero parar de me sentir assim</a>
           </div>
@@ -325,6 +334,23 @@
       </div>
     </section>
 
+    <!-- SOBRE -->
+    <section id="sobre">
+      <div class="container split">
+        <div class="about-photo-wrap reveal-left">
+          <img src="sobre.png" alt="Foto profissional de Gabriella Trevizan, psicóloga clínica" loading="lazy" />
+        </div>
+        <div class="about-card about-text reveal">
+          <h2>Quem é Gabriella Trevizan?</h2>
+          <p>Também sou mãe — e sei, na prática, como a maternidade pode intensificar a ansiedade, a sobrecarga e a cobrança de dar conta de tudo. Falo com você de dentro dessa experiência.</p>
+          <p>Sou psicóloga formada pela Universidade Tuiuti do Paraná, atuo com a Terapia Cognitivo-Comportamental (TCC) e estou em especialização em Práticas Baseadas em Evidências pelo In PBE — métodos cientificamente comprovados para um atendimento cada vez mais eficaz.</p>
+          <p>Atendo mulheres que se sentem ansiosas, cansadas e mentalmente exaustas, ajudando a entender seus pensamentos e lidar com as emoções de forma mais leve.</p>
+          <p>Acredito na terapia como um espaço seguro, acolhedor e sem julgamentos, onde você pode se reconectar consigo mesma, no seu tempo.</p>
+          <p>Se você sente que precisa de ajuda, estou aqui para caminhar com você.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- COMO FUNCIONA -->
     <section id="funciona">
       <div class="container">
@@ -339,7 +365,6 @@
           <div class="step reveal d3"><h3>Consulta</h3><p>Um espaço de escuta acolhedora para compreender suas questões e sentimentos.</p></div>
           <div class="step reveal d4"><h3>Caminho terapêutico</h3><p>Com acolhimento e direção, seguimos construindo novas formas de viver.</p></div>
         </div>
-        <!-- Botão WhatsApp entre os passos e a caixa de formato -->
         <div class="process-cta-wrap reveal">
           <a class="btn btn-whats-inline" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20agendar%20minha%20consulta.">
             <svg viewBox="0 0 32 32" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M16.04 3C8.86 3 3.03 8.83 3.03 16c0 2.29.6 4.53 1.74 6.5L3 29l6.68-1.75A12.9 12.9 0 0 0 16.04 29C23.21 29 29 23.17 29 16S23.21 3 16.04 3Zm0 23.76c-2.03 0-4.02-.54-5.76-1.56l-.41-.24-3.96 1.04 1.06-3.86-.27-.43A10.69 10.69 0 0 1 5.27 16c0-5.94 4.83-10.77 10.77-10.77 5.91 0 10.72 4.83 10.72 10.77s-4.81 10.76-10.72 10.76Zm5.9-8.06c-.32-.16-1.9-.94-2.2-1.05-.29-.11-.5-.16-.72.16-.21.32-.83 1.05-1.02 1.27-.19.21-.37.24-.69.08-.32-.16-1.36-.5-2.59-1.6-.96-.85-1.6-1.9-1.79-2.22-.19-.32-.02-.49.14-.65.15-.15.32-.37.48-.56.16-.19.21-.32.32-.53.11-.21.05-.4-.03-.56-.08-.16-.72-1.73-.98-2.37-.26-.62-.52-.54-.72-.55h-.61c-.21 0-.56.08-.85.4-.29.32-1.12 1.09-1.12 2.66s1.15 3.09 1.31 3.3c.16.21 2.27 3.46 5.5 4.85.77.33 1.37.53 1.84.68.77.24 1.47.21 2.02.13.62-.09 1.9-.78 2.17-1.53.27-.75.27-1.39.19-1.53-.08-.13-.29-.21-.61-.37Z"/></svg>
@@ -349,23 +374,6 @@
         <div class="format-box reveal">
           <strong>Atendimento presencial e online</strong>
           <p>Você escolhe o formato que faz mais sentido para sua rotina. O atendimento online é realizado por videochamada, com a mesma qualidade, acolhimento e sigilo profissional.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section id="sobre">
-      <div class="container split">
-        <div class="about-photo-wrap reveal-left">
-          <img src="sobre.png" alt="Foto profissional de Gabriella Trevizan, psicóloga clínica" loading="lazy" />
-        </div>
-        <div class="about-card about-text reveal">
-          <h2>Quem é Gabriella Trevizan?</h2>
-          <p>Sou psicóloga formada pela Universidade Tuiuti do Paraná, atuo com a Terapia Cognitivo-Comportamental (TCC) e estou em especialização em Práticas Baseadas em Evidências pelo In PBE, buscando um atendimento cada vez mais ético e eficaz.</p>
-          <p>Além da minha formação, também sou mãe — e sei, na prática, como a maternidade pode intensificar a ansiedade, a sobrecarga e a cobrança de dar conta de tudo.</p>
-          <p>Atendo mulheres que se sentem ansiosas, cansadas e mentalmente exaustas, ajudando a entender seus pensamentos e lidar com as emoções de forma mais leve.</p>
-          <p>Acredito na terapia como um espaço seguro, acolhedor e sem julgamentos, onde você pode se reconectar consigo mesma, no seu tempo.</p>
-          <p>Se você sente que precisa de ajuda, estou aqui para caminhar com você.</p>
         </div>
       </div>
     </section>
@@ -411,20 +419,31 @@
               <button class="dot active" data-index="0" aria-label="Depoimento 1"></button>
               <button class="dot" data-index="1" aria-label="Depoimento 2"></button>
               <button class="dot" data-index="2" aria-label="Depoimento 3"></button>
+              <button class="dot" data-index="3" aria-label="Depoimento 4"></button>
             </div>
           </div>
           <div class="testimonials-right reveal">
             <div class="testimonial active">
               <p class="testimonial-text">"Eu achava que não tinha tempo para terapia. Na verdade, eu não tinha energia para mais nada — e estava descontando isso em tudo. Depois de alguns meses, aprendi a existir na minha própria rotina. Não me sinto mais uma estranha dentro da minha vida."</p>
-              <span class="testimonial-author">L., 31 anos</span>
+              <span class="testimonial-author">L., 31 anos · Curitiba</span>
             </div>
             <div class="testimonial">
               <p class="testimonial-text">"Cheguei achando que o problema era falta de organização. A Gabriella me ajudou a entender que era culpa e autocobrança que me esgotavam. Hoje consigo descansar sem me sentir culpada por isso — e isso mudou tudo."</p>
-              <span class="testimonial-author">C., 36 anos, mãe de dois filhos</span>
+              <span class="testimonial-author">C., 36 anos, mãe de dois filhos · Curitiba</span>
             </div>
             <div class="testimonial">
               <p class="testimonial-text">"Fui procurar ajuda quando senti que não conseguia mais. A Gabriella tem uma escuta muito acolhedora, sem julgamentos. Me surpreendi com o quanto uma sessão por semana pode mudar a forma como você se vê e se trata."</p>
-              <span class="testimonial-author">M., 28 anos</span>
+              <span class="testimonial-author">M., 28 anos · Curitiba</span>
+            </div>
+            <div class="testimonial testimonial--img">
+              <span class="whats-tag">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.533 5.854L.054 23.994l6.306-1.654A11.954 11.954 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.006-1.374l-.36-.214-3.732.979 1-3.647-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/></svg>
+                Mensagem recebida via WhatsApp
+              </span>
+              <div class="whats-img-wrap">
+                <img src="https://raw.githubusercontent.com/rodrigotelles-commits/site-gabriella/main/depoimento1.jpg" alt="Depoimento de paciente via WhatsApp" loading="lazy" />
+              </div>
+              <span class="testimonial-author">J., 30 anos, mãe · São Paulo</span>
             </div>
           </div>
         </div>
@@ -439,13 +458,27 @@
           <h2>Dúvidas comuns antes de começar</h2>
         </div>
         <div class="faq">
-          <details class="reveal d1" open><summary>O atendimento é presencial ou online?</summary><p>Os dois. O atendimento pode ser realizado presencialmente em Curitiba/PR ou online por videochamada para todo o mundo.</p></details>
+          <details class="reveal d1" open><summary>Qual é o valor da consulta?</summary><p>As sessões têm duração de 50 minutos. Os valores e as formas de pagamento são apresentados diretamente pelo WhatsApp — entre em contato e responderei com prazer. A primeira conversa é sem compromisso.</p></details>
+          <details class="reveal d1"><summary>O atendimento é presencial ou online?</summary><p>Os dois. O atendimento pode ser realizado presencialmente em Curitiba/PR ou online por videochamada para todo o mundo.</p></details>
           <details class="reveal d2"><summary>Como sei se preciso fazer terapia?</summary><p>Se você sente ansiedade, culpa, autocobrança, tristeza recorrente, sobrecarga ou dificuldade de lidar com relações e limites, a terapia pode ajudar.</p></details>
           <details class="reveal d3"><summary>Não tenho tempo — como a terapia cabe na minha rotina?</summary><p>Uma sessão semanal de 50 minutos. Online, sem deslocamento, no horário que funcionar para você. A maioria das pacientes descobre que sempre teve esse tempo — mas nunca havia se colocado como prioridade. Começar a terapia é, em si, um ato de se priorizar.</p></details>
           <details class="reveal d4"><summary>Preciso estar em crise para começar a terapia?</summary><p>Não. A terapia é mais eficaz exatamente antes da crise — quando você ainda tem energia para trabalhar os padrões que te esgotam. Se você sente que algo não está bem, isso já é motivo suficiente. Você não precisa esperar piorar para começar a se cuidar.</p></details>
           <details class="reveal d5"><summary>Quanto tempo dura uma sessão?</summary><p>As sessões geralmente têm duração aproximada de 50 minutos.</p></details>
           <details class="reveal"><summary>Quanto tempo dura o processo terapêutico?</summary><p>Não existe um prazo único. O tempo depende das demandas, objetivos e evolução de cada pessoa.</p></details>
           <details class="reveal"><summary>Como faço para agendar?</summary><p>Você pode entrar em contato pelo WhatsApp para verificar disponibilidade de horários e tirar dúvidas iniciais.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVESTIMENTO -->
+    <section id="investimento">
+      <div class="container">
+        <div class="invest-box reveal-scale">
+          <div class="invest-text">
+            <h3>Sobre o investimento</h3>
+            <p>As sessões têm duração de 50 minutos e podem ser semanais ou quinzenais. Para conhecer os valores e verificar a disponibilidade de agenda, basta me enviar uma mensagem — sem compromisso.</p>
+          </div>
+          <a class="btn btn-main" href="https://wa.me/5541999558667?text=Ol%C3%A1%2C%20Gabriella.%20Gostaria%20de%20saber%20os%20valores%20e%20a%20disponibilidade%20de%20agenda." style="flex-shrink:0">Consultar disponibilidade</a>
         </div>
       </div>
     </section>
