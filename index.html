@@ -473,24 +473,60 @@
             s.src="https://w.behold.so/widget.js";d.head.append(s);
           })();
 
-          // Remove "Made with Behold" branding after widget renders
+          // Remove "Made with Behold" branding
           const hideBeholdBranding = () => {
             const widget = document.querySelector('behold-widget');
-            if (!widget || !widget.shadowRoot) return;
-            const style = document.createElement('style');
-            style.textContent = '[class*="Attribution"],[class*="attribution"],[class*="branding"],[class*="Branding"],a[href*="behold.so"]{display:none!important}';
-            widget.shadowRoot.appendChild(style);
+            if (!widget || !widget.shadowRoot) return false;
+            const shadow = widget.shadowRoot;
+
+            // Inject CSS covering all likely selectors
+            if (!shadow.querySelector('#hide-behold')) {
+              const style = document.createElement('style');
+              style.id = 'hide-behold';
+              style.textContent = `
+                a[href*="behold"]{display:none!important}
+                [class*="ttribution"]{display:none!important}
+                [class*="Attribution"]{display:none!important}
+                [class*="randing"]{display:none!important}
+                [class*="Branding"]{display:none!important}
+                [class*="Badge"]{display:none!important}
+                [class*="badge"]{display:none!important}
+                [class*="Credit"]{display:none!important}
+                [class*="credit"]{display:none!important}
+                [class*="Powered"]{display:none!important}
+                [class*="powered"]{display:none!important}
+                [class*="Footer"]{display:none!important}
+                [class*="footer"]{display:none!important}
+              `;
+              shadow.appendChild(style);
+            }
+
+            // Also hide by text content (leaf nodes mentioning Behold)
+            shadow.querySelectorAll('*').forEach(el => {
+              if (el.childElementCount === 0 && el.textContent.toLowerCase().includes('behold')) {
+                let target = el;
+                while (target.parentElement && target.parentElement !== shadow) {
+                  target = target.parentElement;
+                }
+                target.style.setProperty('display', 'none', 'important');
+              }
+            });
+
+            return true;
           };
 
+          // Watch for shadow root to appear, then retry until branding is gone
           const observer = new MutationObserver(() => {
             const widget = document.querySelector('behold-widget');
             if (widget && widget.shadowRoot) {
+              const inner = new MutationObserver(() => hideBeholdBranding());
+              inner.observe(widget.shadowRoot, { childList: true, subtree: true });
               hideBeholdBranding();
               observer.disconnect();
             }
           });
           observer.observe(document.body, { childList: true, subtree: true });
-          setTimeout(hideBeholdBranding, 3000);
+          [500, 1500, 3000, 5000].forEach(ms => setTimeout(hideBeholdBranding, ms));
         </script>
       </div>
     </div>
